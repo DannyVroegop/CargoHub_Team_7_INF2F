@@ -10,10 +10,12 @@ from models.suppliers import Suppliers
 from models.orders import Orders
 from models.clients import Clients
 from models.shipments import Shipments
+import os
 
-DEBUG = True
 
-ROOT_PATH = "Cases/Warehousing/code/data/"
+DEBUG = False
+
+ROOT_PATH = os.getcwd() + "/Warehousing/data/"
 
 _warehouses = None
 _locations = None
