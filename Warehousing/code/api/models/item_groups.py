@@ -54,9 +54,12 @@ class ItemGroups(Base):
         if is_debug:
             self.data = ITEM_GROUPS
         else:
-            f = open(self.data_path, "r")
-            self.data = json.load(f)
-            f.close()
+            try:
+                f = open(self.data_path, "r")
+                self.data = json.load(f)
+                f.close()
+            except:
+                self.data = None
 
     def save(self):
         f = open(self.data_path, "w")
