@@ -1,6 +1,8 @@
 import socketserver
 import http.server
 import json
+import time #Testing speed
+
 
 from providers import auth_provider
 from providers import data_provider
@@ -472,6 +474,7 @@ class ApiRequestHandler(http.server.BaseHTTPRequestHandler):
             self.end_headers()
 
     def do_POST(self):
+        start_time = time.perf_counter()
         api_key = self.headers.get("API_KEY")
         user = auth_provider.get_user(api_key)
         if user == None:
@@ -482,9 +485,11 @@ class ApiRequestHandler(http.server.BaseHTTPRequestHandler):
                 path = self.path.split("/")
                 if len(path) > 3 and path[1] == "api" and path[2] == "v1":
                     self.handle_post_version_1(path[3:], user)
+                    print("--- %s seconds ---" % (time.perf_counter() - start_time))
             except Exception:
                 self.send_response(500)
                 self.end_headers()
+                print("--- %s seconds ---" % (time.time() - start_time))
 
     def handle_put_version_1(self, path, user):
         if not auth_provider.has_access(user, path, "put"):
