@@ -7,64 +7,74 @@ using System.Threading.Tasks;
 using System.Collections.Generic;
 
 namespace Test;
-
 [TestClass]
-public class UnitTestLocations
+public class UnitTestTransfers
 {
     private readonly HttpClient _client;
     private const string ApiKey = "a1b2c3d4e5";
-    public UnitTestLocations()
+    public UnitTestTransfers()
     {
         _client = new HttpClient();
         _client.BaseAddress = new Uri("http://127.0.0.1:3000");
     }
 
     [TestMethod]
-     public async Task TestGetAllLocations()
-     {
-        var requestall_wo_key = new HttpRequestMessage(HttpMethod.Get, "/api/v1/locations");
+    public async Task TestGetTransfers()
+    {
+        var requestall_wo_key = new HttpRequestMessage(HttpMethod.Get, "/api/v1/transfers");
         // Without key should be false
         var wo_key = await _client.SendAsync(requestall_wo_key);
         Assert.IsFalse(wo_key.IsSuccessStatusCode, "API call was successful (It should not be)");
 
-
-        var requestall = new HttpRequestMessage(HttpMethod.Get, "/api/v1/locations");
+        var requestall = new HttpRequestMessage(HttpMethod.Get, "/api/v1/transfers");
         requestall.Headers.Add("API_KEY", ApiKey);
         var all = await _client.SendAsync(requestall);
         Assert.IsTrue(all.IsSuccessStatusCode, "API call was not successful");
         // Check content
         string responseBodyall = await all.Content.ReadAsStringAsync();
         Assert.IsNotNull(responseBodyall, "Response body is null");
-     }
+    }
 
-     [TestMethod]
-     public async Task TestGetOneLocation()
+    [TestMethod]
+    public async Task TestGetOneTransfer()
     {
-        // Request one
-        var requestone = new HttpRequestMessage(HttpMethod.Get, "/api/v1/locations/A.2.4");
+        var requestone = new HttpRequestMessage(HttpMethod.Get, "/api/v1/transfers/1");
         requestone.Headers.Add("API_KEY", ApiKey);
         var one = await _client.SendAsync(requestone);
         // response
         Assert.IsTrue(one.IsSuccessStatusCode, "API call was not successful");
         // content
-        string responseloc = await one.Content.ReadAsStringAsync();
-        Assert.IsNotNull(responseloc, "Response body is null");
+        string responseBodyone = await one.Content.ReadAsStringAsync();
+        Assert.IsNotNull(responseBodyone, "Response body is null");
+        string expectedTransfer = @"{
+                ""id"": 1,
+                ""reference"": ""TRANS001"",
+                ""transfer_from"": 1,
+                ""transfer_to"": 2,
+                ""transfer_status"": ""Scheduled | Processed"",
+                ""created_at"": ""2024-05-01T14:00:00Z"",
+                ""updated_at"": ""2024-05-02T15:00:00Z"",
+                ""items"": [
+                    {
+                        ""item_id"": 1,
+                        ""amount"": 50
+                    },
+                    {
+                        ""item_id"": 2,
+                        ""amount"": 30
+                    }
+                ]
+            }";
+        string expectednowhite = expectedTransfer.Replace(" ", "")
+                     .Replace("\t", "")
+                     .Replace("\n", "")
+                     .Replace("\r", "");
+        string responsenowhite = responseBodyone.Replace(" ", "")
+                     .Replace("\t", "")
+                     .Replace("\n", "")
+                     .Replace("\r", "");
 
-        string expectedlocation = "{\n" +
-                    "    \"warehouse_id\": 1,\n" +
-                    "    \"code\": \"A.2.4\",\n" +
-                    "    \"name\": \"Row: A, Rack: 2, Shelf: 4\",\n" +
-                    "    \"created_at\": \"2024-04-24 10:23:44\",\n" +
-                    "    \"updated_at\": \"2024-04-24 10:23:44\"\n" +
-                    "}";
-        string responseBodylocnowhite = responseloc.Replace(" ", "")
-                     .Replace("\t", "")
-                     .Replace("\n", "")
-                     .Replace("\r", "");
-        string expectedJsonlocnowhite = expectedlocation.Replace(" ", "")
-                     .Replace("\t", "")
-                     .Replace("\n", "")
-                     .Replace("\r", "");
-        Assert.AreEqual(expectedJsonlocnowhite, responseBodylocnowhite);
+        Assert.AreEqual(expectednowhite, responsenowhite);
+
     }
 }
