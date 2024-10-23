@@ -72,9 +72,43 @@ public class UnitTestWarehouses
                      .Replace("\t", "")
                      .Replace("\n", "")
                      .Replace("\r", "");
-        Console.WriteLine(responseBodyone);
-        Console.WriteLine(expectedJson);
         Assert.AreEqual(responseBodyonenowhite, expectedJsonnowhite);
+
+        var requestlocations = new HttpRequestMessage(HttpMethod.Get, "/api/v1/warehouses/1/locations");
+        // Without key should be false
+        requestlocations.Headers.Add("API_KEY", ApiKey);
+        var locs = await _client.SendAsync(requestlocations);
+        Assert.IsTrue(locs.IsSuccessStatusCode, "API call was not successful");
+        string responseBodylocs = await locs.Content.ReadAsStringAsync();
+        string singlelocation = "";
+        using (JsonDocument doc = JsonDocument.Parse(responseBodylocs))
+        {
+            foreach(JsonElement element in doc.RootElement.EnumerateArray())
+            {
+                if (element.GetProperty("code").GetString() == "A.2.4")
+                {
+                    singlelocation = element.ToString();
+                    break;
+                }
+            }
+        }
+        string expectedlocation = "{\n" +
+                    "    \"warehouse_id\": 1,\n" +
+                    "    \"code\": \"A.2.4\",\n" +
+                    "    \"name\": \"Row: A, Rack: 2, Shelf: 4\",\n" +
+                    "    \"created_at\": \"2024-04-24 10:23:44\",\n" +
+                    "    \"updated_at\": \"2024-04-24 10:23:44\"\n" +
+                    "}";
+        string responseBodylocnowhite = singlelocation.Replace(" ", "")
+                     .Replace("\t", "")
+                     .Replace("\n", "")
+                     .Replace("\r", "");
+        string expectedJsonlocnowhite = expectedlocation.Replace(" ", "")
+                     .Replace("\t", "")
+                     .Replace("\n", "")
+                     .Replace("\r", "");
+        Console.WriteLine(singlelocation);
+        Assert.AreEqual(expectedJsonlocnowhite, responseBodylocnowhite);
 
      }
 }
