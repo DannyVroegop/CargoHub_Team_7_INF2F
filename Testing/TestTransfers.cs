@@ -77,4 +77,39 @@ public class UnitTestTransfers
         Assert.AreEqual(expectednowhite, responsenowhite);
 
     }
+
+    [TestMethod]
+    public async Task GetTransferItems()
+    {
+        var requestitems = new HttpRequestMessage(HttpMethod.Get, "/api/v1/transfers/1/items");
+        requestitems.Headers.Add("API_KEY", ApiKey);
+        var items = await _client.SendAsync(requestitems);
+
+        Assert.IsTrue(items.IsSuccessStatusCode, "API call was not successful");
+
+        string responseBodyitems = await items.Content.ReadAsStringAsync();
+        Assert.IsNotNull(responseBodyitems, "Response body is null");
+
+        // test body contents
+        string expectedcontents = @"
+            [
+                {
+                    ""item_id"": 1,
+                    ""amount"": 50
+                },
+                {
+                    ""item_id"": 2,
+                    ""amount"": 30
+                }
+            ]";
+        string responseBodylocnowhite = responseBodyitems.Replace(" ", "")
+                     .Replace("\t", "")
+                     .Replace("\n", "")
+                     .Replace("\r", "");
+        string expectedJsonnowhite = expectedcontents.Replace(" ", "")
+                     .Replace("\t", "")
+                     .Replace("\n", "")
+                     .Replace("\r", "");
+        Assert.AreEqual(expectedJsonnowhite, responseBodylocnowhite);
+    }
 }

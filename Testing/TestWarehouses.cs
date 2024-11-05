@@ -116,7 +116,7 @@ public class UnitTestWarehouses
                      .Replace("\t", "")
                      .Replace("\n", "")
                      .Replace("\r", "");
-        Console.WriteLine(singlelocation);
+        // Console.WriteLine(singlelocation);
         Assert.AreEqual(expectedJsonlocnowhite, responseBodylocnowhite);
         
      }
