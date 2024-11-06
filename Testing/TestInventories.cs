@@ -26,7 +26,7 @@ public class UnitTestInventories
         var wo_key = await _client.SendAsync(requestall_wo_key);
         Assert.IsFalse(wo_key.IsSuccessStatusCode, "API call was successful (It should not be)");
 
-        var requestall = new HttpRequestMessage(HttpMethod.Get, "/api/v1/item_types");
+        var requestall = new HttpRequestMessage(HttpMethod.Get, "/api/v1/inventories");
         requestall.Headers.Add("API_KEY", ApiKey);
         var all = await _client.SendAsync(requestall);
         Assert.IsTrue(all.IsSuccessStatusCode, "API call was not successful");
