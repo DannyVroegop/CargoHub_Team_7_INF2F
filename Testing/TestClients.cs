@@ -120,7 +120,7 @@ public class UnitTestClients
                     }
                 ]
             }
-        ]"; // will need to change 
+        ]";
 
         string expectednowhite = expectedBody.Replace(" ", "")
                      .Replace("\t", "")
