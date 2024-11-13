@@ -5,7 +5,7 @@ namespace Data
 {
     public class WarehouseContext : DbContext
     {
-        public WarehouseContext(DbContextOptions<WarehousingContext> options) : base(options) { }
+        public WarehouseContext(DbContextOptions<WarehouseContext> options) : base(options) { }
 
         public DbSet<Warehouse> Warehouses { get; set; }
 
