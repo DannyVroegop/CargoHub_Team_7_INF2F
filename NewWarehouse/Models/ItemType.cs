@@ -6,11 +6,13 @@ using System.Threading.Tasks;
 namespace Models{
 
     public class ItemType{
-        public int Id;
-        public string Name;
-        public string Description;
-        public string Created_at;
-        public string Updated_at;
+        public int Id{ get; set; }
+        public string Name{ get; set; }
+        public string Description{ get; set; }
+        public string Created_at{ get; set; }
+        public string Updated_at{ get; set; }
+
+        public ItemType(){}
 
         public ItemType(int id, string name, string description, string created_at, string updated_at){
             Id = id;

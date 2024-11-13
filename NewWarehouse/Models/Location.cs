@@ -6,12 +6,14 @@ using System.Threading.Tasks;
 namespace Models{
 
     public class Location{
-        public int Id;
-        public int WarehouseId;
-        public string Code;
-        public string Name;
-        public string Created_at;
-        public string Updated_at;
+        public int Id{ get; set; }
+        public int WarehouseId{ get; set; }
+        public string Code{ get; set; }
+        public string Name{ get; set; }
+        public string Created_at{ get; set; }
+        public string Updated_at{ get; set; }
+
+        public Location(){}
 
         public Location(int id, int warehouseId, string code, string name, string created_at, string updated_at){
             Id = id;

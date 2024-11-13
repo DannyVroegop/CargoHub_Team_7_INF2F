@@ -5,18 +5,20 @@ using System.Threading.Tasks;
 
 namespace Models{
     public class Inventory{
-        public int Id;
-        public int Item_id;
-        public string Description;
-        public string ItemReference;
-        public string Location_Id;
-        public int TotalOnHand;
-        public int TotalExpected;
-        public int TotalOrdered;
-        public int TotalAllocated;
-        public int TotalAvailable;
-        public string Created_at;
-        public string Updated_at;
+        public int Id{ get; set; }
+        public int Item_id{ get; set; }
+        public string Description{ get; set; }
+        public string ItemReference{ get; set; }
+        public string Location_Id{ get; set; }
+        public int TotalOnHand{ get; set; }
+        public int TotalExpected{ get; set; }
+        public int TotalOrdered{ get; set; }
+        public int TotalAllocated{ get; set; }
+        public int TotalAvailable{ get; set; }
+        public string Created_at{ get; set; }
+        public string Updated_at{ get; set; }
+
+        public Inventory(){}
 
         public Inventory(int id, int item_id, string description, string item_reference, string location_id, int totalOnHand, int totalExpected, int totalOrdered, int totalAllocated, int totalAvailable, string created_at, string updated_at){
             Id = id;

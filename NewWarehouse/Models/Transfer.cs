@@ -7,14 +7,16 @@ namespace Models
 {
     public class Transfer
     {
-        public int Id;
-        public string Reference;
-        public string TransferFrom;
-        public string TransferTo;
-        public string TransferStatus;
-        public string Created_at;
-        public string Updated_at;
-        public Dictionary<int, int> Items;
+        public int Id{ get; set; }
+        public string Reference{ get; set; }
+        public string TransferFrom{ get; set; }
+        public string TransferTo{ get; set; }
+        public string TransferStatus{ get; set; }
+        public string Created_at{ get; set; }
+        public string Updated_at{ get; set; }
+        public Dictionary<int, int> Items{ get; set; }
+
+        public Transfer(){}
 
         public Transfer(int id, string reference, string transferFrom, string transferTo, string transferStatus, string created_at, string updated_at, Dictionary<int, int> items){
             Id = id;

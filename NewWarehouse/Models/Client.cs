@@ -7,18 +7,20 @@ namespace Models
 {
     public class Client
     {
-        public int Id;
-        public string Name;
-        public string Address;
-        public string City;
-        public string Zip_Code;
-        public string Province;
-        public string Country;
-        public string Contact_Name;
-        public string Contact_Phone;
-        public string Contact_Email;
-        public string Created_at;
-        public string Updated_at;
+        public int Id{ get; set; }
+        public string Name{ get; set; }
+        public string Address{ get; set; }
+        public string City{ get; set; }
+        public string Zip_Code{ get; set; }
+        public string Province{ get; set; }
+        public string Country{ get; set; }
+        public string Contact_Name{ get; set; }
+        public string Contact_Phone{ get; set; }
+        public string Contact_Email{ get; set; }
+        public string Created_at{ get; set; }
+        public string Updated_at{ get; set; }
+
+        public Client(){}
 
         public Client(int id, string name, string address, string city, string zip_code, string province, string country, string contact_name, string contact_phone, string contact_email, string created_at, string updated_at){
             Id = id;

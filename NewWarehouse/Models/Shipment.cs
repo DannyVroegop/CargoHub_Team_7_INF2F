@@ -6,25 +6,27 @@ using System.Threading.Tasks;
 namespace Models{
 
     public class Shipment{
-        public int Id;
-        public int OrderId;
-        public int SourceId;
-        public string OrderDate;
-        public string Requestdate;
-        public string ShipmentDate;
-        public string ShipmentType;
-        public string ShipmentStatus;
-        public string Notes;
-        public string CarrierCode;
-        public string CarrierDescription;
-        public string ServiceCode;
-        public string PaymentType;
-        public string TransferMode;
-        public int TotalPackageCount;
-        public double TotalPackageWeight;
-        public string Created_at;
-        public string Updated_at;
-        public Dictionary<int, int> Items;
+        public int Id{ get; set; }
+        public int OrderId{ get; set; }
+        public int SourceId{ get; set; }
+        public string OrderDate{ get; set; }
+        public string Requestdate{ get; set; }
+        public string ShipmentDate{ get; set; }
+        public string ShipmentType{ get; set; }
+        public string ShipmentStatus{ get; set; }
+        public string Notes{ get; set; }
+        public string CarrierCode{ get; set; }
+        public string CarrierDescription{ get; set; }
+        public string ServiceCode{ get; set; }
+        public string PaymentType{ get; set; }
+        public string TransferMode{ get; set; }
+        public int TotalPackageCount{ get; set; }
+        public double TotalPackageWeight{ get; set; }
+        public string Created_at{ get; set; }
+        public string Updated_at{ get; set; }
+        public Dictionary<int, int> Items{ get; set; }
+
+        public Shipment(){}
 
         public Shipment(int id,int orderId, int sourceId, string orderDate, string requestdate , string shipmentDate, string shipmentType, string shipmentStatus, string notes, string carrierCode, string carrierDescription, string serviceCode, string paymentType, string transferMode, int totalPackageCount, double totalPackageWeight, string created_at, string updated_at, Dictionary<int, int> items){
             Id = id;
