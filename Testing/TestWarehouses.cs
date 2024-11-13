@@ -102,6 +102,7 @@ public class UnitTestWarehouses
             }
         }
         string expectedlocation = "{\n" +
+                    "    \"id\": 10,\n" +
                     "    \"warehouse_id\": 1,\n" +
                     "    \"code\": \"A.2.4\",\n" +
                     "    \"name\": \"Row: A, Rack: 2, Shelf: 4\",\n" +

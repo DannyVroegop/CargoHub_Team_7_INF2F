@@ -1,6 +1,6 @@
 [
     {
-        "uid": "P001",
+        "id": "1",
         "code": "ABC123",
         "description": "High-performance laptop",
         "short_description": "Laptop",
@@ -20,7 +20,7 @@
         "updated_at": "2024-02-03 13:12:00"
     },
     {
-        "uid": "P002",
+        "id": "1",
         "code": "XYZ789",
         "description": "Wireless Bluetooth headphones",
         "short_description": "Headphones",

@@ -41,7 +41,7 @@ public class UnitTestLocations
      public async Task TestGetOneLocation()
     {
         // Request one
-        var requestone = new HttpRequestMessage(HttpMethod.Get, "/api/v1/locations/A.2.4");
+        var requestone = new HttpRequestMessage(HttpMethod.Get, "/api/v1/locations/10");
         requestone.Headers.Add("API_KEY", ApiKey);
         var one = await _client.SendAsync(requestone);
         // response
@@ -51,6 +51,7 @@ public class UnitTestLocations
         Assert.IsNotNull(responseloc, "Response body is null");
 
         string expectedlocation = "{\n" +
+                    "    \"id\": 10,\n" +
                     "    \"warehouse_id\": 1,\n" +
                     "    \"code\": \"A.2.4\",\n" +
                     "    \"name\": \"Row: A, Rack: 2, Shelf: 4\",\n" +

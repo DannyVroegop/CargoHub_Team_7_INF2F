@@ -89,7 +89,7 @@ public class UnitTestSuppliers
 
         string expectedBody = @"[
             {
-                ""uid"": ""P001"",
+                ""id"": ""1"",
                 ""code"": ""ABC123"",
                 ""description"": ""High-performance laptop"",
                 ""short_description"": ""Laptop"",
