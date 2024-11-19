@@ -14,11 +14,11 @@ namespace Models
         public string TransferStatus{ get; set; }
         public string Created_at{ get; set; }
         public string Updated_at{ get; set; }
-        public Dictionary<int, int> Items{ get; set; }
+        public ICollection<TransferItem> TransferItems { get; set; }
 
         public Transfer(){}
 
-        public Transfer(int id, string reference, string transferFrom, string transferTo, string transferStatus, string created_at, string updated_at, Dictionary<int, int> items){
+        public Transfer(int id, string reference, string transferFrom, string transferTo, string transferStatus, string created_at, string updated_at, ICollection<TransferItem> transferItems){
             Id = id;
             Reference = reference;
             TransferFrom = transferFrom;
@@ -26,6 +26,7 @@ namespace Models
             TransferStatus = transferStatus;
             Created_at = created_at;
             Updated_at = updated_at;
+            TransferItems = transferItems;
         }
     }
 }

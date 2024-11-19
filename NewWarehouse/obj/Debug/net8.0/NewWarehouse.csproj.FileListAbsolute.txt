@@ -109,3 +109,15 @@ C:\Users\graaf\OneDrive\Documenten\GitHub\WarehouseCase\NewWarehouse\obj\Debug\n
 C:\Users\graaf\OneDrive\Documenten\GitHub\WarehouseCase\NewWarehouse\obj\Debug\net8.0\NewWarehouse.pdb
 C:\Users\graaf\OneDrive\Documenten\GitHub\WarehouseCase\NewWarehouse\obj\Debug\net8.0\NewWarehouse.genruntimeconfig.cache
 C:\Users\graaf\OneDrive\Documenten\GitHub\WarehouseCase\NewWarehouse\obj\Debug\net8.0\ref\NewWarehouse.dll
+C:\Users\graaf\OneDrive\Documenten\GitHub\WarehouseCase\NewWarehouse\bin\Debug\net8.0\DataJson\client.json
+C:\Users\graaf\OneDrive\Documenten\GitHub\WarehouseCase\NewWarehouse\bin\Debug\net8.0\DataJson\inventory.json
+C:\Users\graaf\OneDrive\Documenten\GitHub\WarehouseCase\NewWarehouse\bin\Debug\net8.0\DataJson\item.json
+C:\Users\graaf\OneDrive\Documenten\GitHub\WarehouseCase\NewWarehouse\bin\Debug\net8.0\DataJson\location.json
+C:\Users\graaf\OneDrive\Documenten\GitHub\WarehouseCase\NewWarehouse\bin\Debug\net8.0\DataJson\order.json
+C:\Users\graaf\OneDrive\Documenten\GitHub\WarehouseCase\NewWarehouse\bin\Debug\net8.0\DataJson\shipment.json
+C:\Users\graaf\OneDrive\Documenten\GitHub\WarehouseCase\NewWarehouse\bin\Debug\net8.0\DataJson\supplier.json
+C:\Users\graaf\OneDrive\Documenten\GitHub\WarehouseCase\NewWarehouse\bin\Debug\net8.0\DataJson\transfer.json
+C:\Users\graaf\OneDrive\Documenten\GitHub\WarehouseCase\NewWarehouse\bin\Debug\net8.0\DataJson\warehouse.json
+C:\Users\graaf\OneDrive\Documenten\GitHub\WarehouseCase\NewWarehouse\bin\Debug\net8.0\DataJson\itemgroup.json
+C:\Users\graaf\OneDrive\Documenten\GitHub\WarehouseCase\NewWarehouse\bin\Debug\net8.0\DataJson\itemline.json
+C:\Users\graaf\OneDrive\Documenten\GitHub\WarehouseCase\NewWarehouse\bin\Debug\net8.0\DataJson\itemtype.json

@@ -24,10 +24,13 @@ namespace Models{
         public string SupplierPartNumber{ get; set; }
         public string Created_at{ get; set; }
         public string Updated_at{ get; set; }
+        public ICollection<OrderItem> OrderItems { get; set; }
+        public ICollection<ShipmentItem> ShipmentItems { get; set; }
+        public ICollection<TransferItem> TransferItems { get; set; }
 
         public Item(){}
 
-        public Item(int id, string code, string description, string shortDescription, string upcCode, string modelNumber, string commodityCode, int itemLineId, int itemGroupId, int itemTypeId, int unitPurchaseQuantity, int unitOrderQuantity, int packOrderQuantity, int supplierId, string supplierCode, string supplierPartNumber, string created_at, string updated_at){
+        public Item(int id, string code, string description, string shortDescription, string upcCode, string modelNumber, string commodityCode, int itemLineId, int itemGroupId, int itemTypeId, int unitPurchaseQuantity, int unitOrderQuantity, int packOrderQuantity, int supplierId, string supplierCode, string supplierPartNumber, string created_at, string updated_at, ICollection<OrderItem> orderItems, ICollection<ShipmentItem> shipmentItems, ICollection<TransferItem> transferItems){
             Id = id;
             Code = code;
             Description = description;
@@ -46,6 +49,9 @@ namespace Models{
             SupplierPartNumber = supplierPartNumber;
             Created_at = created_at;
             Updated_at = updated_at;
+            OrderItems = orderItems;
+            ShipmentItems = shipmentItems;
+            TransferItems = transferItems;
         }
     }
 }

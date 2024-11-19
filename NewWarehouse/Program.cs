@@ -1,7 +1,9 @@
 using Microsoft.EntityFrameworkCore;
 using Data;
+using Microsoft.Extensions.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
+bool LoadData = false;
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
@@ -10,6 +12,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<WarehouseContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("WarehousingContext")));
 
+builder.Services.AddTransient<DataLoader.DataLoader>();
 // Configure URL for the application (this is where we set the port and host)
 builder.WebHost.UseUrls("http://127.0.0.1:3000");
 

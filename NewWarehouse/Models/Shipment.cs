@@ -24,11 +24,11 @@ namespace Models{
         public double TotalPackageWeight{ get; set; }
         public string Created_at{ get; set; }
         public string Updated_at{ get; set; }
-        public Dictionary<int, int> Items{ get; set; }
+        public ICollection<ShipmentItem> ShipmentItems { get; set; }
 
         public Shipment(){}
 
-        public Shipment(int id,int orderId, int sourceId, string orderDate, string requestdate , string shipmentDate, string shipmentType, string shipmentStatus, string notes, string carrierCode, string carrierDescription, string serviceCode, string paymentType, string transferMode, int totalPackageCount, double totalPackageWeight, string created_at, string updated_at, Dictionary<int, int> items){
+        public Shipment(int id,int orderId, int sourceId, string orderDate, string requestdate , string shipmentDate, string shipmentType, string shipmentStatus, string notes, string carrierCode, string carrierDescription, string serviceCode, string paymentType, string transferMode, int totalPackageCount, double totalPackageWeight, string created_at, string updated_at, ICollection<ShipmentItem> shipmentItems){
             Id = id;
             OrderId = orderId;
             SourceId = sourceId;
@@ -47,7 +47,7 @@ namespace Models{
             TotalPackageWeight = totalPackageWeight;
             Created_at = created_at;
             Updated_at = updated_at;
-            Items = items;
+            ShipmentItems = shipmentItems;
         }
     }
 }
