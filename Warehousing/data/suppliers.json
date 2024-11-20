@@ -1,6 +1,6 @@
 [
     {
-        "id": "S001",
+        "id": 1,
         "code": "SUP001",
         "name": "TechMart Electronics",
         "address": "123 Main Street",
@@ -16,7 +16,7 @@
         "updated_at": "2024-02-03 13:12:00"
     },
     {
-        "id": "S002",
+        "id": 2,
         "code": "SUP002",
         "name": "SoundWave Audio",
         "address": "456 Sound Avenue",
@@ -32,7 +32,7 @@
         "updated_at": "2024-02-03 13:12:00"
     },
     {
-        "id": "S003",
+        "id": 3,
         "code": "SUP003",
         "name": "FashionFab Fabrics",
         "address": "789 Fabric Lane",
@@ -48,7 +48,7 @@
         "updated_at": "2024-02-03 13:12:00"
     },
     {
-        "id": "S004",
+        "id": 4,
         "code": "SUP004",
         "name": "GreenGarden Produce",
         "address": "321 Fresh Street",

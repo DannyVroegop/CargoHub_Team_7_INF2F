@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "order_id": 1,
+        "source_id": 501,
+        "order_date": "2024-05-01",
+        "request_date": "2024-05-03",
+        "shipment_date": "2024-05-05",
+        "shipment_type": "Incoming | Outgoing",
+        "shipment_status": "Scheduled | Transit | Delivered",
+        "notes": "Express shipment for urgent requirement.",
+        "carrier_code": "UPS",
+        "carrier_description": "United Parcel Service",
+        "service_code": "NextDay",
+        "payment_type": "Cash | Check | Bank | Bitcoin",
+        "transfer_mode": "Freight | Ship | Air",
+        "total_package_count": 10,
+        "total_package_weight": 200.5,
+        "created_at": "2024-05-01T12:00:00Z",
+        "updated_at": "2024-05-02T14:00:00Z",
+        "items": [
+            {
+                "item_id": 1,
+                "amount": 5
+            },
+            {
+                "item_id": 2,
+                "amount": 10
+            }
+        ]
+    }
+]
