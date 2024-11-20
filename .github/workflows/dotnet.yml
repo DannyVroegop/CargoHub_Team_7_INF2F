@@ -14,11 +14,17 @@ jobs:
     # Checkout the repository
     - name: Checkout repository
       uses: actions/checkout@v4
+      with:
+         fetch-depth: 0
+
+    - name: List files in NewWarehouse
+      run: ls -R WarehouseCase/NewWarehouse
 
     # Set up Docker
     - name: Set up Docker Compose
       run: |
-        docker compose -f WarehouseCase/NewWarehouse/docker-compose.yml up -d
+        working-directory: WarehouseCase/NewWarehouse
+        run: docker compose -f docker-compose.yml up -d
 
     # Wait for services to be ready
     - name: Wait for services
