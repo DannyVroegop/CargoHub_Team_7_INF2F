@@ -24,7 +24,7 @@ jobs:
     - name: Set up Docker Compose
       run: |
         working-directory: WarehouseCase/NewWarehouse
-        run: docker compose -f docker-compose.yml up -d
+        run: docker compose up -d
 
     # Wait for services to be ready
     - name: Wait for services
