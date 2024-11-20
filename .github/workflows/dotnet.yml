@@ -23,10 +23,9 @@ jobs:
     # Wait for services to be ready
     - name: Wait for services
       run: |
-        until docker compose -f NewWarehouse/docker-compose.yml ps | grep "healthy"; do
-          echo "Waiting for services to be healthy..."
-          sleep 5
-        done
+        docker compose -f NewWarehouse/docker-compose.yml up -d
+        echo "Waiting briefly for services to stabilize..."
+        sleep 30
 
     # Set up .NET environment
     - name: Setup .NET
