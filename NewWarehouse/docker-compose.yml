@@ -1,6 +1,12 @@
 services:
   postgres:
     image: postgres
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
     command: -c shared_buffers=256MB -c max_connections=200
     ports:
       - 5432:5432
@@ -15,6 +21,12 @@ services:
 
   pgadmin:
     image: dpage/pgadmin4
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
     environment:
       PGADMIN_DEFAULT_EMAIL: admin@ad.min
       PGADMIN_DEFAULT_PASSWORD: admin
