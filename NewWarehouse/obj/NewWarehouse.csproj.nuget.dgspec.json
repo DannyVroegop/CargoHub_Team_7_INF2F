@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\graaf\\OneDrive\\Documenten\\GitHub\\WarehouseCase\\NewWarehouse\\NewWarehouse.csproj": {}
+    "C:\\Users\\danny\\OneDrive\\Documents\\Informatica\\Jaar 2\\Jaar 2 Semester 1\\SoftwareConstruction\\CargoHub_Team_7_INF2F\\NewWarehouse\\NewWarehouse.csproj": {}
   },
   "projects": {
-    "C:\\Users\\graaf\\OneDrive\\Documenten\\GitHub\\WarehouseCase\\NewWarehouse\\NewWarehouse.csproj": {
+    "C:\\Users\\danny\\OneDrive\\Documents\\Informatica\\Jaar 2\\Jaar 2 Semester 1\\SoftwareConstruction\\CargoHub_Team_7_INF2F\\NewWarehouse\\NewWarehouse.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\graaf\\OneDrive\\Documenten\\GitHub\\WarehouseCase\\NewWarehouse\\NewWarehouse.csproj",
+        "projectUniqueName": "C:\\Users\\danny\\OneDrive\\Documents\\Informatica\\Jaar 2\\Jaar 2 Semester 1\\SoftwareConstruction\\CargoHub_Team_7_INF2F\\NewWarehouse\\NewWarehouse.csproj",
         "projectName": "NewWarehouse",
-        "projectPath": "C:\\Users\\graaf\\OneDrive\\Documenten\\GitHub\\WarehouseCase\\NewWarehouse\\NewWarehouse.csproj",
-        "packagesPath": "C:\\Users\\graaf\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\graaf\\OneDrive\\Documenten\\GitHub\\WarehouseCase\\NewWarehouse\\obj\\",
+        "projectPath": "C:\\Users\\danny\\OneDrive\\Documents\\Informatica\\Jaar 2\\Jaar 2 Semester 1\\SoftwareConstruction\\CargoHub_Team_7_INF2F\\NewWarehouse\\NewWarehouse.csproj",
+        "packagesPath": "C:\\Users\\danny\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\danny\\OneDrive\\Documents\\Informatica\\Jaar 2\\Jaar 2 Semester 1\\SoftwareConstruction\\CargoHub_Team_7_INF2F\\NewWarehouse\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\graaf\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\danny\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -55,6 +55,12 @@
               "target": "Package",
               "version": "[8.0.10, )"
             },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.10, )"
+            },
             "Npgsql.EntityFrameworkCore.PostgreSQL": {
               "target": "Package",
               "version": "[8.0.10, )"
@@ -79,7 +85,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.205/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

@@ -358,6 +358,18 @@
           }
         }
       },
+      "Microsoft.EntityFrameworkCore.Tools/8.0.10": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.Design": "8.0.10"
+        },
+        "compile": {
+          "lib/net8.0/_._": {}
+        },
+        "runtime": {
+          "lib/net8.0/_._": {}
+        }
+      },
       "Microsoft.Extensions.Caching.Abstractions/8.0.0": {
         "type": "package",
         "dependencies": {
@@ -1369,6 +1381,32 @@
         "microsoft.entityframeworkcore.relational.nuspec"
       ]
     },
+    "Microsoft.EntityFrameworkCore.Tools/8.0.10": {
+      "sha512": "aaimNUjkJDHdZb2hxd6hjwz7OdeankbQHPx8/b+qCfVfaEpOAIW0LTBge4qG+AUKacKfcoK7GJq6ACjenEvPLQ==",
+      "type": "package",
+      "path": "microsoft.entityframeworkcore.tools/8.0.10",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "docs/PACKAGE.md",
+        "lib/net8.0/_._",
+        "microsoft.entityframeworkcore.tools.8.0.10.nupkg.sha512",
+        "microsoft.entityframeworkcore.tools.nuspec",
+        "tools/EntityFrameworkCore.PS2.psd1",
+        "tools/EntityFrameworkCore.PS2.psm1",
+        "tools/EntityFrameworkCore.psd1",
+        "tools/EntityFrameworkCore.psm1",
+        "tools/about_EntityFrameworkCore.help.txt",
+        "tools/init.ps1",
+        "tools/net461/any/ef.exe",
+        "tools/net461/win-arm64/ef.exe",
+        "tools/net461/win-x86/ef.exe",
+        "tools/netcoreapp2.0/any/ef.dll",
+        "tools/netcoreapp2.0/any/ef.runtimeconfig.json"
+      ]
+    },
     "Microsoft.Extensions.Caching.Abstractions/8.0.0": {
       "sha512": "3KuSxeHoNYdxVYfg2IRZCThcrlJ1XJqIXkAWikCsbm5C/bCjv7G0WoKDyuR98Q+T607QT2Zl5GsbGRkENcV2yQ==",
       "type": "package",
@@ -2106,23 +2144,24 @@
     "net8.0": [
       "Microsoft.EntityFrameworkCore >= 8.0.10",
       "Microsoft.EntityFrameworkCore.Design >= 8.0.10",
+      "Microsoft.EntityFrameworkCore.Tools >= 8.0.10",
       "Npgsql.EntityFrameworkCore.PostgreSQL >= 8.0.10"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\graaf\\.nuget\\packages\\": {}
+    "C:\\Users\\danny\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\graaf\\OneDrive\\Documenten\\GitHub\\WarehouseCase\\NewWarehouse\\NewWarehouse.csproj",
+      "projectUniqueName": "C:\\Users\\danny\\OneDrive\\Documents\\Informatica\\Jaar 2\\Jaar 2 Semester 1\\SoftwareConstruction\\CargoHub_Team_7_INF2F\\NewWarehouse\\NewWarehouse.csproj",
       "projectName": "NewWarehouse",
-      "projectPath": "C:\\Users\\graaf\\OneDrive\\Documenten\\GitHub\\WarehouseCase\\NewWarehouse\\NewWarehouse.csproj",
-      "packagesPath": "C:\\Users\\graaf\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\graaf\\OneDrive\\Documenten\\GitHub\\WarehouseCase\\NewWarehouse\\obj\\",
+      "projectPath": "C:\\Users\\danny\\OneDrive\\Documents\\Informatica\\Jaar 2\\Jaar 2 Semester 1\\SoftwareConstruction\\CargoHub_Team_7_INF2F\\NewWarehouse\\NewWarehouse.csproj",
+      "packagesPath": "C:\\Users\\danny\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\danny\\OneDrive\\Documents\\Informatica\\Jaar 2\\Jaar 2 Semester 1\\SoftwareConstruction\\CargoHub_Team_7_INF2F\\NewWarehouse\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\graaf\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\danny\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2163,6 +2202,12 @@
             "target": "Package",
             "version": "[8.0.10, )"
           },
+          "Microsoft.EntityFrameworkCore.Tools": {
+            "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+            "suppressParent": "All",
+            "target": "Package",
+            "version": "[8.0.10, )"
+          },
           "Npgsql.EntityFrameworkCore.PostgreSQL": {
             "target": "Package",
             "version": "[8.0.10, )"
@@ -2187,7 +2232,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.205/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
