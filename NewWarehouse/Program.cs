@@ -14,7 +14,7 @@ builder.Services.AddDbContext<WarehouseContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("WarehousingContext")));
 
 //builder.Services.AddTransient<DataLoader.DataLoader>();
-// Configure URL for the application (this is where we set the port and host)
+// Configure URL for the application (this is where we set the port and host).
 builder.WebHost.UseUrls("http://127.0.0.1:3000");
 
 var app = builder.Build();
