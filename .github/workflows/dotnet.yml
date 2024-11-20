@@ -14,22 +14,16 @@ jobs:
     # Checkout the repository
     - name: Checkout repository
       uses: actions/checkout@v4
-      with:
-         fetch-depth: 0
-
-    - name: List files in NewWarehouse
-      run: ls -R WarehouseCase/NewWarehouse
 
     # Set up Docker
     - name: Set up Docker Compose
       run: |
-        working-directory: WarehouseCase/NewWarehouse
-        run: docker compose up -d
+        docker compose -f NewWarehouse/docker-compose.yml up -d
 
     # Wait for services to be ready
     - name: Wait for services
       run: |
-        until docker compose -f WarehouseCase/NewWarehouse/docker-compose.yml ps | grep "healthy"; do
+        until docker compose -f NewWarehouse/docker-compose.yml ps | grep "healthy"; do
           echo "Waiting for services to be healthy..."
           sleep 5
         done
@@ -42,18 +36,18 @@ jobs:
 
     # Restore dependencies
     - name: Restore dependencies
-      run: dotnet restore WarehouseCase/NewWarehouse
+      run: dotnet restore NewWarehouse
 
     # Build the project
     - name: Build
-      run: dotnet build --no-restore WarehouseCase/NewWarehouse
+      run: dotnet build --no-restore NewWarehouse
 
     # Test the project
     - name: Test
-      run: dotnet test --no-build --verbosity normal WarehouseCase/Testing
+      run: dotnet test --no-build --verbosity normal Testing
 
     # Clean up Docker services
     - name: Clean up Docker Compose
       if: always()
       run: |
-        docker compose -f WarehouseCase/NewWarehouse/docker-compose.yml down
+        docker compose -f NewWarehouse/docker-compose.yml down
