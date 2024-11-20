@@ -184,8 +184,11 @@ class ApiRequestHandler(http.server.BaseHTTPRequestHandler):
                     self.wfile.write(json.dumps(item_group).encode("utf-8"))
                 case 3:
                     if path[2] == "items":
+                        print("Test")
                         item_group_id = int(path[1])
+                        print(item_group_id)
                         items = data_provider.fetch_item_pool().get_items_for_item_group(item_group_id)
+                        print("hallow")
                         self.send_response(200)
                         self.send_header("Content-type", "application/json")
                         self.end_headers()

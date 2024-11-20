@@ -67,6 +67,7 @@ class Items(Base):
         return result
 
     def get_items_for_item_group(self, item_group_id):
+        print("hallow ik ben hier")
         result = []
         for x in self.data:
             if x["item_group_id"] == item_group_id:
