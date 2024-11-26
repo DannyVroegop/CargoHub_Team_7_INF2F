@@ -67,11 +67,10 @@ class Items(Base):
         return result
 
     def get_items_for_item_group(self, item_group_id):
-        print("hallow ik ben hier")
         result = []
         for x in self.data:
-            if x["item_group_id"] == item_group_id:
-                result.append(x["id"])
+            if x["item_group"] == item_group_id["name"]:
+                result.append(x)
         return result
 
     def get_items_for_item_type(self, item_type_id):
