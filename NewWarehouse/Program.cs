@@ -44,8 +44,8 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Use(async (context, next) =>{
-            var ApiTokens = builder.Configuration["API_KEY"];
-            Console.WriteLine(builder.Configuration);
+            var ApiTokens =  System.Environment.GetEnvironmentVariable("API_KEY");
+            Console.WriteLine(ApiTokens);
             if (!context.Request.Headers.ContainsKey("API_KEY"))
             {
                 context.Response.StatusCode = 401;
