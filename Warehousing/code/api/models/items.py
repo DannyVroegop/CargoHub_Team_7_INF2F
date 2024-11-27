@@ -93,7 +93,7 @@ class Items(Base):
         count = 0
         for x in self.data:
             if count < x["id"]:
-                count == x["id"]
+                count = x["id"]
         item["id"] = count + 1
         self.data.append(item)
 
