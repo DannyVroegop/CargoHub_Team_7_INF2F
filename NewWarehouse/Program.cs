@@ -1,28 +1,28 @@
+using Services; // Namespace for the services
 using Microsoft.EntityFrameworkCore;
 using Data;
-using Microsoft.Extensions.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
-bool LoadData = false;
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-// Register DbContext with the correct configuration access
+// Register DbContext
 builder.Services.AddDbContext<CargoContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("WarehousingContext")));
 
-//builder.Services.AddTransient<DataLoader.DataLoader>();
-// Configure URL for the application (this is where we set the port and host)
+// Register the IWarehouseService and its implementation
+builder.Services.AddScoped<IWarehouseService, WarehouseService>();
+
+// Configure the application
 builder.WebHost.UseUrls("http://127.0.0.1:3000");
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+// Configure the HTTP request pipeline
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
-    // The default HSTS value is 30 days.
     app.UseHsts();
 }
 

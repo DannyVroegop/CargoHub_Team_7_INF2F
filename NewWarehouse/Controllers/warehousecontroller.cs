@@ -1,7 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Data;  // Namespace for the DbContext
-using Models;  // Namespace for the Warehouse model
+using Models; // Namespace for the Warehouse model
+using WarehouseCase.Services; // Namespace for the IWarehouseService
 
 namespace WarehouseCase.Controllers
 {
@@ -9,23 +8,20 @@ namespace WarehouseCase.Controllers
     [ApiController]
     public class WarehousesController : ControllerBase
     {
-        private readonly CargoContext _context;
+        private readonly IWarehouseService _warehouseService;
 
-        // Constructor to inject the DbContext
-        public WarehousesController(CargoContext context)
+        // Constructor to inject the service
+        public WarehousesController(IWarehouseService warehouseService)
         {
-            _context = context;
+            _warehouseService = warehouseService;
         }
 
         // GET: api/v2/warehouse
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Warehouse>>> GetWarehouses()
         {
-            // Fetch all the warehouses from the database
-            var warehouses = await _context.Warehouses.ToListAsync();
-
-            // Return the list of warehouses as an HTTP 200 OK response
-            return Ok(warehouses);
+            var warehouses = await _warehouseService.GetAllWarehousesAsync();
+            return Ok(warehouses); // Return the list of warehouses
         }
 
         // POST: api/v2/warehouse
@@ -34,17 +30,11 @@ namespace WarehouseCase.Controllers
         {
             if (!ModelState.IsValid)
             {
-                return BadRequest(ModelState);  // If the data is not valid, return a 400 Bad Request
+                return BadRequest(ModelState); // Return a 400 Bad Request if invalid
             }
 
-            // Add the new warehouse to the DbContext
-            _context.Warehouses.Add(warehouse);
-
-            // Save the changes to the database
-            await _context.SaveChangesAsync();
-
-            // Return a 201 Created response with the added warehouse
-            return CreatedAtAction(nameof(GetWarehouses), new { id = warehouse.Id }, warehouse);
+            var createdWarehouse = await _warehouseService.AddWarehouseAsync(warehouse);
+            return CreatedAtAction(nameof(GetWarehouses), new { id = createdWarehouse.Id }, createdWarehouse);
         }
     }
 }
