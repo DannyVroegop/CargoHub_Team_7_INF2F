@@ -186,7 +186,8 @@ class ApiRequestHandler(http.server.BaseHTTPRequestHandler):
                 case 3:
                     if path[2] == "items":
                         item_group_id = int(path[1])
-                        items = data_provider.fetch_item_pool().get_items_for_item_group(item_group_id)
+                        item_group_by_id = data_provider.fetch_item_group_pool().get_item_group(item_group_id)
+                        items = data_provider.fetch_item_pool().get_items_for_item_group(item_group_by_id)
                         self.send_response(200)
                         self.send_header("Content-type", "application/json")
                         self.end_headers()
