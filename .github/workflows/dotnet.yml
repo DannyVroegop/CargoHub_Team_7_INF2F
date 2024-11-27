@@ -18,15 +18,14 @@ jobs:
     # Set up Docker
     - name: Set up Docker Compose
       run: |
-        docker compose -f WarehouseCase/NewWarehouse/docker-compose.yml up -d
+        docker compose -f NewWarehouse/docker-compose.yml up -d
 
     # Wait for services to be ready
     - name: Wait for services
       run: |
-        until docker compose -f WarehouseCase/NewWarehouse/docker-compose.yml ps | grep "healthy"; do
-          echo "Waiting for services to be healthy..."
-          sleep 5
-        done
+        docker compose -f NewWarehouse/docker-compose.yml up -d
+        echo "Waiting briefly for services to stabilize..."
+        sleep 30
 
     # Set up .NET environment
     - name: Setup .NET
@@ -36,18 +35,18 @@ jobs:
 
     # Restore dependencies
     - name: Restore dependencies
-      run: dotnet restore WarehouseCase/NewWarehouse
+      run: dotnet restore NewWarehouse
 
     # Build the project
     - name: Build
-      run: dotnet build --no-restore WarehouseCase/NewWarehouse
+      run: dotnet build --no-restore NewWarehouse
 
     # Test the project
     - name: Test
-      run: dotnet test --no-build --verbosity normal WarehouseCase/Testing
+      run: dotnet test --no-build --verbosity normal Testing
 
     # Clean up Docker services
     - name: Clean up Docker Compose
       if: always()
       run: |
-        docker compose -f WarehouseCase/NewWarehouse/docker-compose.yml down
+        docker compose -f NewWarehouse/docker-compose.yml down

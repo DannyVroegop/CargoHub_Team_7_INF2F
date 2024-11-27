@@ -1,0 +1,15 @@
+C:\Users\graaf\OneDrive\Documenten\GitHub\WarehouseCase\link\bin\Debug\net8.0\link.exe
+C:\Users\graaf\OneDrive\Documenten\GitHub\WarehouseCase\link\bin\Debug\net8.0\link.deps.json
+C:\Users\graaf\OneDrive\Documenten\GitHub\WarehouseCase\link\bin\Debug\net8.0\link.runtimeconfig.json
+C:\Users\graaf\OneDrive\Documenten\GitHub\WarehouseCase\link\bin\Debug\net8.0\link.dll
+C:\Users\graaf\OneDrive\Documenten\GitHub\WarehouseCase\link\bin\Debug\net8.0\link.pdb
+C:\Users\graaf\OneDrive\Documenten\GitHub\WarehouseCase\link\obj\Debug\net8.0\link.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\graaf\OneDrive\Documenten\GitHub\WarehouseCase\link\obj\Debug\net8.0\link.AssemblyInfoInputs.cache
+C:\Users\graaf\OneDrive\Documenten\GitHub\WarehouseCase\link\obj\Debug\net8.0\link.AssemblyInfo.cs
+C:\Users\graaf\OneDrive\Documenten\GitHub\WarehouseCase\link\obj\Debug\net8.0\link.csproj.CoreCompileInputs.cache
+C:\Users\graaf\OneDrive\Documenten\GitHub\WarehouseCase\link\obj\Debug\net8.0\link.sourcelink.json
+C:\Users\graaf\OneDrive\Documenten\GitHub\WarehouseCase\link\obj\Debug\net8.0\link.dll
+C:\Users\graaf\OneDrive\Documenten\GitHub\WarehouseCase\link\obj\Debug\net8.0\refint\link.dll
+C:\Users\graaf\OneDrive\Documenten\GitHub\WarehouseCase\link\obj\Debug\net8.0\link.pdb
+C:\Users\graaf\OneDrive\Documenten\GitHub\WarehouseCase\link\obj\Debug\net8.0\link.genruntimeconfig.cache
+C:\Users\graaf\OneDrive\Documenten\GitHub\WarehouseCase\link\obj\Debug\net8.0\ref\link.dll
