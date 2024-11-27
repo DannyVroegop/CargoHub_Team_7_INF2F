@@ -28,8 +28,9 @@ namespace Models{
         public ICollection<ShipmentItem> ShipmentItems { get; set; }
         public ICollection<TransferItem> TransferItems { get; set; }
 
+        #pragma warning disable CS8618
         public Item(){}
-
+        #pragma warning restore CS8618
         public Item(int id, string code, string description, string shortDescription, string upcCode, string modelNumber, string commodityCode, int itemLineId, int itemGroupId, int itemTypeId, int unitPurchaseQuantity, int unitOrderQuantity, int packOrderQuantity, int supplierId, string supplierCode, string supplierPartNumber, string created_at, string updated_at, ICollection<OrderItem> orderItems, ICollection<ShipmentItem> shipmentItems, ICollection<TransferItem> transferItems){
             Id = id;
             Code = code;

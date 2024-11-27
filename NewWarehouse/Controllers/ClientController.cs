@@ -11,14 +11,14 @@ namespace WarehouseCase.Controllers{
     {
         private readonly CargoContext _Context;
 
-        public (CargoContext context)
+        public ClientController (CargoContext context)
         {
-            _context = context;
+            _Context = context;
         }
         //GET api/v2/Clients
         [HttpGet]
         public async Task<IActionResult> Get(){
-            var warehouses = await _context.Clients.ToListAsync();
+            var warehouses = await _Context.Clients.ToListAsync();
 
             return Ok(warehouses);
         }

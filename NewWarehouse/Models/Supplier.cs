@@ -22,9 +22,9 @@ namespace Models{
 
         public string AddressExtra { get; set; }
 
-
+        #pragma warning disable CS8618
         public Supplier(){}
-
+        #pragma warning restore CS8618
         public Supplier(int id, string code, string name, string address, string city, string zip_Code, string province, string country, string contactName, string contactPhone, string reference, string created_at, string updated_at, string addressExtra = "~"){
             Id = id;
             Code = code;

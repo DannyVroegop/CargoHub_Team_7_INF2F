@@ -26,9 +26,9 @@ namespace Models{
         public string Created_at{ get; set; }
         public string Updated_at{ get; set; }
         public ICollection<OrderItem> OrderItems { get; set; }
-
+        #pragma warning disable CS8618
         public Order(){}
-
+        #pragma warning restore CS8618
         public Order(int id, int sourceId, string orderDate, string requestdate , string reference, string referenceExtra, string orderStatus, string notes, string shippingNotes, string pickingnotes, int warehouseId, int shipTo, int billTo, int shipmentId, double totalAmmount, double totalDiscount, double totalTax, double totalSurcharge, string created_at, string updated_at, ICollection<OrderItem> orderItems){
             Id = id;
             SourceId = sourceId;
