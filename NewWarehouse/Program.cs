@@ -44,7 +44,7 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Use(async (context, next) =>{
-            var ApiTokens = builder.Configuration["testtoken"];
+            var ApiTokens = builder.Configuration["API_KEY"];
             Console.WriteLine(builder.Configuration);
             if (!context.Request.Headers.ContainsKey("API_KEY"))
             {
