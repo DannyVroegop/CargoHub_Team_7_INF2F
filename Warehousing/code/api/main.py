@@ -577,6 +577,7 @@ class ApiRequestHandler(http.server.BaseHTTPRequestHandler):
             updated_item = json.loads(post_data.decode())
             data_provider.fetch_item_pool().update_item(item_id, updated_item)
             data_provider.fetch_item_pool().save()
+            v2link_provider.v2_Put_Handler(updated_warehouse, path[0], path[1])
             self.send_response(200)
             self.end_headers()
         elif path[0] == "item_lines":
@@ -586,6 +587,7 @@ class ApiRequestHandler(http.server.BaseHTTPRequestHandler):
             updated_item_line = json.loads(post_data.decode())
             data_provider.fetch_item_line_pool().update_item_line(item_line_id, updated_item_line)
             data_provider.fetch_item_line_pool().save()
+            v2link_provider.v2_Put_Handler(updated_warehouse, path[0], path[1])
             self.send_response(200)
             self.end_headers()
         elif path[0] == "item_groups":
@@ -595,6 +597,7 @@ class ApiRequestHandler(http.server.BaseHTTPRequestHandler):
             updated_item_group = json.loads(post_data.decode())
             data_provider.fetch_item_group_pool().update_item_group(item_group_id, updated_item_group)
             data_provider.fetch_item_group_pool().save()
+            v2link_provider.v2_Put_Handler(updated_warehouse, path[0], path[1])
             self.send_response(200)
             self.end_headers()
         elif path[0] == "item_types":
@@ -604,6 +607,7 @@ class ApiRequestHandler(http.server.BaseHTTPRequestHandler):
             updated_item_type = json.loads(post_data.decode())
             data_provider.fetch_item_type_pool().update_item_type(item_type_id, updated_item_type)
             data_provider.fetch_item_type_pool().save()
+            v2link_provider.v2_Put_Handler(updated_warehouse, path[0], path[1])
             self.send_response(200)
             self.end_headers()
         elif path[0] == "inventories":
@@ -613,6 +617,7 @@ class ApiRequestHandler(http.server.BaseHTTPRequestHandler):
             updated_inventory = json.loads(post_data.decode())
             data_provider.fetch_inventory_pool().update_inventory(inventory_id, updated_inventory)
             data_provider.fetch_inventory_pool().save()
+            v2link_provider.v2_Put_Handler(updated_warehouse, path[0], path[1])
             self.send_response(200)
             self.end_headers()
         elif path[0] == "suppliers":
@@ -622,6 +627,7 @@ class ApiRequestHandler(http.server.BaseHTTPRequestHandler):
             updated_supplier = json.loads(post_data.decode())
             data_provider.fetch_supplier_pool().update_supplier(supplier_id, updated_supplier)
             data_provider.fetch_supplier_pool().save()
+            v2link_provider.v2_Put_Handler(updated_warehouse, path[0], path[1])
             self.send_response(200)
             self.end_headers()
         elif path[0] == "orders":
@@ -659,6 +665,7 @@ class ApiRequestHandler(http.server.BaseHTTPRequestHandler):
             updated_client = json.loads(post_data.decode())
             data_provider.fetch_client_pool().update_client(client_id, updated_client)
             data_provider.fetch_client_pool().save()
+            v2link_provider.v2_Put_Handler(updated_warehouse, path[0], path[1])
             self.send_response(200)
             self.end_headers()
         elif path[0] == "shipments":
