@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 namespace Models{
 
     public class Item{
-        public int Id{ get; set; }
+        public string Id{ get; set; }
         public string Code{ get; set; }
         public string Description{ get; set; }
         public string ShortDescription{ get; set; }
@@ -30,7 +30,7 @@ namespace Models{
 
         public Item(){}
 
-        public Item(int id, string code, string description, string shortDescription, string upcCode, string modelNumber, string commodityCode, int itemLineId, int itemGroupId, int itemTypeId, int unitPurchaseQuantity, int unitOrderQuantity, int packOrderQuantity, int supplierId, string supplierCode, string supplierPartNumber, string created_at, string updated_at, ICollection<OrderItem> orderItems, ICollection<ShipmentItem> shipmentItems, ICollection<TransferItem> transferItems){
+        public Item(string id, string code, string description, string shortDescription, string upcCode, string modelNumber, string commodityCode, int itemLineId, int itemGroupId, int itemTypeId, int unitPurchaseQuantity, int unitOrderQuantity, int packOrderQuantity, int supplierId, string supplierCode, string supplierPartNumber, string created_at, string updated_at, ICollection<OrderItem> orderItems, ICollection<ShipmentItem> shipmentItems, ICollection<TransferItem> transferItems){
             Id = id;
             Code = code;
             Description = description;

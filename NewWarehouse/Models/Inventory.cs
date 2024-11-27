@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 namespace Models{
     public class Inventory{
         public int Id{ get; set; }
-        public int Item_id{ get; set; }
+        public string Item_id{ get; set; }
         public string Description{ get; set; }
         public string ItemReference{ get; set; }
-        public string Location_Id{ get; set; }
+        public ICollection<Location> Locations { get; set; }
         public int TotalOnHand{ get; set; }
         public int TotalExpected{ get; set; }
         public int TotalOrdered{ get; set; }
@@ -18,14 +18,15 @@ namespace Models{
         public string Created_at{ get; set; }
         public string Updated_at{ get; set; }
 
-        public Inventory(){}
+        public Inventory(){
+            Locations = new List<Location>();
+        }
 
-        public Inventory(int id, int item_id, string description, string item_reference, string location_id, int totalOnHand, int totalExpected, int totalOrdered, int totalAllocated, int totalAvailable, string created_at, string updated_at){
+        public Inventory(int id, string item_id, string description, string item_reference, string location_id, int totalOnHand, int totalExpected, int totalOrdered, int totalAllocated, int totalAvailable, string created_at, string updated_at){
             Id = id;
             Item_id = item_id;
             Description = description;
             ItemReference = item_reference;
-            Location_Id = location_id;
             TotalOnHand = totalOnHand;
             TotalExpected = totalExpected;
             TotalAllocated = totalAllocated;

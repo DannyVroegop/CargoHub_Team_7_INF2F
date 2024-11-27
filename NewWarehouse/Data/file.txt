@@ -1,0 +1,543 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace Models
+{
+    public class Client
+    {
+        public int Id{ get; set; }
+        public string Name{ get; set; }
+        public string Address{ get; set; }
+        public string City{ get; set; }
+        public string Zip_Code{ get; set; }
+        public string Province{ get; set; }
+        public string Country{ get; set; }
+        public string Contact_Name{ get; set; }
+        public string Contact_Phone{ get; set; }
+        public string Contact_Email{ get; set; }
+        public string Created_at{ get; set; }
+        public string Updated_at{ get; set; }
+
+        public Client(){}
+
+        public Client(int id, string name, string address, string city, string zip_code, string province, string country, string contact_name, string contact_phone, string contact_email, string created_at, string updated_at){
+            Id = id;
+            Name = name;
+            Address = address;
+            City = city;
+            Zip_Code = zip_code;
+            Province = province;
+            Country = country;
+            Contact_Name = contact_name;
+            Contact_Phone = contact_phone;
+            Contact_Email = contact_email;
+            Created_at = created_at;
+            Updated_at = updated_at;
+        }
+    }
+}
+namespace NewWarehouse.Models;
+
+public class ErrorViewModel
+{
+    public string? RequestId { get; set; }
+
+    public bool ShowRequestId => !string.IsNullOrEmpty(RequestId);
+}
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace Models{
+    public class Inventory{
+        public int Id{ get; set; }
+        public string Item_id{ get; set; }
+        public string Description{ get; set; }
+        public string ItemReference{ get; set; }
+        public ICollection<Location> Locations { get; set; }
+        public int TotalOnHand{ get; set; }
+        public int TotalExpected{ get; set; }
+        public int TotalOrdered{ get; set; }
+        public int TotalAllocated{ get; set; }
+        public int TotalAvailable{ get; set; }
+        public string Created_at{ get; set; }
+        public string Updated_at{ get; set; }
+
+        public Inventory(){
+            Locations = new List<Location>();
+        }
+
+        public Inventory(int id, string item_id, string description, string item_reference, string location_id, int totalOnHand, int totalExpected, int totalOrdered, int totalAllocated, int totalAvailable, string created_at, string updated_at){
+            Id = id;
+            Item_id = item_id;
+            Description = description;
+            ItemReference = item_reference;
+            TotalOnHand = totalOnHand;
+            TotalExpected = totalExpected;
+            TotalAllocated = totalAllocated;
+            TotalAvailable = totalAvailable;
+            Created_at = created_at;
+            Updated_at = updated_at;
+        }
+    }
+}
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace Models{
+
+    public class Item{
+        public string Id{ get; set; }
+        public string Code{ get; set; }
+        public string Description{ get; set; }
+        public string ShortDescription{ get; set; }
+        public string UpcCode{ get; set; }
+        public string ModelNumber{ get; set; }
+        public string CommodityCode{ get; set; }
+        public int ItemLineId{ get; set; }
+        public int ItemGroupId{ get; set; }
+        public int ItemTypeId{ get; set; }
+        public int UnitPurchaseQuantity{ get; set; }
+        public int UnitOrderQuantity{ get; set; }
+        public int PackOrderQuantity{ get; set; }
+        public int SupplierId{ get; set; }
+        public string SupplierCode{ get; set; }
+        public string SupplierPartNumber{ get; set; }
+        public string Created_at{ get; set; }
+        public string Updated_at{ get; set; }
+        public ICollection<OrderItem> OrderItems { get; set; }
+        public ICollection<ShipmentItem> ShipmentItems { get; set; }
+        public ICollection<TransferItem> TransferItems { get; set; }
+
+        public Item(){}
+
+        public Item(string id, string code, string description, string shortDescription, string upcCode, string modelNumber, string commodityCode, int itemLineId, int itemGroupId, int itemTypeId, int unitPurchaseQuantity, int unitOrderQuantity, int packOrderQuantity, int supplierId, string supplierCode, string supplierPartNumber, string created_at, string updated_at, ICollection<OrderItem> orderItems, ICollection<ShipmentItem> shipmentItems, ICollection<TransferItem> transferItems){
+            Id = id;
+            Code = code;
+            Description = description;
+            ShortDescription = shortDescription;
+            UpcCode = upcCode;
+            ModelNumber = modelNumber;
+            CommodityCode = commodityCode;
+            ItemLineId = itemLineId;
+            ItemGroupId = itemGroupId;
+            ItemTypeId = itemTypeId;
+            UnitPurchaseQuantity = unitPurchaseQuantity;
+            UnitOrderQuantity = unitOrderQuantity;
+            PackOrderQuantity = packOrderQuantity;
+            SupplierId = supplierId;
+            SupplierCode = supplierCode;
+            SupplierPartNumber = supplierPartNumber;
+            Created_at = created_at;
+            Updated_at = updated_at;
+            OrderItems = orderItems;
+            ShipmentItems = shipmentItems;
+            TransferItems = transferItems;
+        }
+    }
+}
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace Models{
+    public class ItemGroup{
+        public int Id{ get; set; }
+        public string Name{ get; set; }
+        public string Description{ get; set; }
+        public string Created_at{ get; set; }
+        public string Updated_at{ get; set; }
+
+        public ItemGroup(){}
+
+        public ItemGroup(int id, string name, string description, string created_at, string updated_at){
+            Id = id;
+            Name = name;
+            Description = description;
+            Created_at = created_at;
+            Updated_at = updated_at;
+        }
+    }
+}
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace Models{
+
+    public class ItemLine{
+        public int Id{ get; set; }
+        public string Name{ get; set; }
+        public string Description{ get; set; }
+        public string Created_at{ get; set; }
+        public string Updated_at{ get; set; }
+
+        public ItemLine(){}
+
+        public ItemLine(int id, string name, string description, string created_at, string updated_at){
+            Id = id;
+            Name = name;
+            Description = description;
+            Created_at = created_at;
+            Updated_at = updated_at;
+        }
+    }
+}
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace Models{
+
+    public class ItemType{
+        public int Id{ get; set; }
+        public string Name{ get; set; }
+        public string Description{ get; set; }
+        public string Created_at{ get; set; }
+        public string Updated_at{ get; set; }
+
+        public ItemType(){}
+
+        public ItemType(int id, string name, string description, string created_at, string updated_at){
+            Id = id;
+            Name = name;
+            Description = description;
+            Created_at = created_at;
+            Updated_at = updated_at;
+        }
+    }
+}
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace Models{
+
+    public class Location{
+        public int Id{ get; set; }
+        public int WarehouseId{ get; set; }
+        public string Code{ get; set; }
+        public string Name{ get; set; }
+        public string Created_at{ get; set; }
+        public string Updated_at{ get; set; }
+
+        public Location(){}
+
+        public Location(int id, int warehouseId, string code, string name, string created_at, string updated_at){
+            Id = id;
+            WarehouseId = warehouseId;
+            Code = code;
+            Name = name;
+            Created_at = created_at;
+            Updated_at = updated_at;
+        }
+    }
+}
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace Models{
+    public class Order{
+        public int Id{ get; set; }
+        public int SourceId{ get; set; }
+        public string OrderDate{ get; set; }
+        public string Requestdate{ get; set; }
+        public string Reference{ get; set; }
+        public string ReferenceExtra{ get; set; }
+        public string OrderStatus{ get; set; }
+        public string Notes{ get; set; }
+        public string ShippingNotes{ get; set; }
+        public string PickingNotes{ get; set; }
+        public int WarehouseId{ get; set; }
+        public int ShipTo{ get; set; }
+        public int BillTo{ get; set; }
+        public int ShipmentId{ get; set; }
+        public double TotalAmmount{ get; set; }
+        public double TotalDiscount{ get; set; }
+        public double TotalTax{ get; set; }
+        public double TotalSurcharge{ get; set; }
+        public string Created_at{ get; set; }
+        public string Updated_at{ get; set; }
+        public ICollection<OrderItem> OrderItems { get; set; }
+
+        public Order(){}
+
+        public Order(int id, int sourceId, string orderDate, string requestdate , string reference, string referenceExtra, string orderStatus, string notes, string shippingNotes, string pickingnotes, int warehouseId, int shipTo, int billTo, int shipmentId, double totalAmmount, double totalDiscount, double totalTax, double totalSurcharge, string created_at, string updated_at, ICollection<OrderItem> orderItems){
+            Id = id;
+            SourceId = sourceId;
+            OrderDate = orderDate;
+            Requestdate = requestdate;
+            Reference = reference;
+            ReferenceExtra = referenceExtra;
+            OrderStatus = orderStatus;
+            Notes = notes;
+            ShippingNotes = shippingNotes;
+            PickingNotes = pickingnotes;
+            WarehouseId = warehouseId;
+            ShipTo = shipTo;
+            BillTo = billTo;
+            ShipmentId = shipmentId;
+            TotalAmmount = totalAmmount;
+            TotalDiscount = totalDiscount;
+            TotalTax = totalTax;
+            TotalSurcharge = totalSurcharge;
+            Created_at = created_at;
+            Updated_at = updated_at;
+            OrderItems = orderItems;
+        }
+    }
+}
+using System;
+
+namespace Models
+{
+    public class OrderItem
+    {
+        public int OrderId { get; set; }
+        public Order Order { get; set; }
+
+        public string ItemId { get; set; }
+        public Item Item { get; set; }
+
+        public int Quantity { get; set; }
+    }
+}
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace Models{
+
+    public class Shipment{
+        public int Id{ get; set; }
+        public int OrderId{ get; set; }
+        public int SourceId{ get; set; }
+        public string OrderDate{ get; set; }
+        public string Requestdate{ get; set; }
+        public string ShipmentDate{ get; set; }
+        public string ShipmentType{ get; set; }
+        public string ShipmentStatus{ get; set; }
+        public string Notes{ get; set; }
+        public string CarrierCode{ get; set; }
+        public string CarrierDescription{ get; set; }
+        public string ServiceCode{ get; set; }
+        public string PaymentType{ get; set; }
+        public string TransferMode{ get; set; }
+        public int TotalPackageCount{ get; set; }
+        public double TotalPackageWeight{ get; set; }
+        public string Created_at{ get; set; }
+        public string Updated_at{ get; set; }
+        public ICollection<ShipmentItem> ShipmentItems { get; set; }
+
+        public Shipment(){}
+
+        public Shipment(int id,int orderId, int sourceId, string orderDate, string requestdate , string shipmentDate, string shipmentType, string shipmentStatus, string notes, string carrierCode, string carrierDescription, string serviceCode, string paymentType, string transferMode, int totalPackageCount, double totalPackageWeight, string created_at, string updated_at, ICollection<ShipmentItem> shipmentItems){
+            Id = id;
+            OrderId = orderId;
+            SourceId = sourceId;
+            OrderDate = orderDate;
+            Requestdate = requestdate;
+            ShipmentDate = shipmentDate;
+            ShipmentType = shipmentType;
+            ShipmentStatus = shipmentStatus;
+            Notes = notes;
+            CarrierCode = carrierCode;
+            CarrierDescription = carrierDescription;
+            ServiceCode = serviceCode;
+            PaymentType = paymentType;
+            TransferMode = transferMode;
+            TotalPackageCount = totalPackageCount;
+            TotalPackageWeight = totalPackageWeight;
+            Created_at = created_at;
+            Updated_at = updated_at;
+            ShipmentItems = shipmentItems;
+        }
+    }
+}
+namespace Models
+{
+    public class ShipmentItem
+    {
+        public int ShipmentId { get; set; }
+        public Shipment Shipment { get; set; }
+
+        public string ItemId { get; set; }
+        public Item Item { get; set; }
+
+        public int Quantity { get; set; }
+    }
+}
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace Models{
+
+    public class Supplier{
+        public int Id{ get; set; }
+        public string Code{ get; set; }
+        public string Name{ get; set; }
+        public string Address{ get; set; }
+        public string City{ get; set; }
+        public string Zip_Code{ get; set; }
+        public string Province{ get; set; }
+        public string Country{ get; set; }
+        public string ContactName{ get; set; }
+        public string ContactPhone{ get; set; }
+        public string Reference{ get; set; }
+        public string Created_at{ get; set; }
+        public string Updated_at{ get; set; }
+
+        public string AddressExtra { get; set; }
+
+
+        public Supplier(){}
+
+        public Supplier(int id, string code, string name, string address, string city, string zip_Code, string province, string country, string contactName, string contactPhone, string reference, string created_at, string updated_at, string addressExtra = "~"){
+            Id = id;
+            Code = code;
+            Name = name;
+            Address = address;
+            AddressExtra = addressExtra;
+            City = city;
+            Zip_Code = zip_Code;
+            Province = province;
+            Country = country;
+            ContactName = contactName;
+            ContactPhone = contactPhone;
+            Reference = reference;
+            Created_at = created_at;
+            Updated_at = updated_at;
+        }
+    }
+}
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace Models
+{
+    public class Transfer
+    {
+        public int Id{ get; set; }
+        public string Reference{ get; set; }
+        public string TransferFrom{ get; set; }
+        public string TransferTo{ get; set; }
+        public string TransferStatus{ get; set; }
+        public string Created_at{ get; set; }
+        public string Updated_at{ get; set; }
+        public ICollection<TransferItem> TransferItems { get; set; }
+
+        public Transfer(){}
+
+        public Transfer(int id, string reference, string transferFrom, string transferTo, string transferStatus, string created_at, string updated_at, ICollection<TransferItem> transferItems){
+            Id = id;
+            Reference = reference;
+            TransferFrom = transferFrom;
+            TransferTo = transferTo;
+            TransferStatus = transferStatus;
+            Created_at = created_at;
+            Updated_at = updated_at;
+            TransferItems = transferItems;
+        }
+    }
+}
+namespace Models
+{
+    public class TransferItem
+    {
+        public int TransferId { get; set; }
+        public Transfer Transfer { get; set; }
+
+        public string ItemId { get; set; }
+        public Item Item { get; set; }
+
+        public int Quantity { get; set; }
+    }
+}
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace Models
+{
+    public class Warehouse
+    {
+        public int Id { get; set; }
+        public string Code{ get; set; }
+        public string Name{ get; set; }
+        public string Address{ get; set; }
+        public string City{ get; set; }
+        public string Zip_Code{ get; set; }
+        public string Province{ get; set; }
+        public string Country{ get; set; }
+        public string ContactName{ get; set; }
+        public string ContactPhone{ get; set; }
+        public string ContactEmail{ get; set; }
+        public string Created_at{ get; set; }
+        public string Updated_at{ get; set; }
+
+        public Warehouse() { }
+
+        public Warehouse(int id, string code, string name, string address, string city, string zip_Code, string province, string country, string contact_name, string contact_phone, string contact_email, string created_at, string updated_at)
+        {
+            Id = id;
+            Code = code;
+            Name = name;
+            Address = address;
+            City = city;
+            Zip_Code = zip_Code;
+            Province = province;
+            Country = country;
+            ContactName = contact_name;
+            ContactPhone = contact_phone;
+            ContactEmail = contact_email;
+            Created_at = created_at;
+            Updated_at = updated_at;
+        }
+    }
+}
+namespace Models
+{
+    public class WarehouseDTO
+    {
+        public int Id { get; set; }
+        public string Code { get; set; }
+        public string Name { get; set; }
+        public string Address { get; set; }
+        public string Zip { get; set; }
+        public string City { get; set; }
+        public string Province { get; set; }
+        public string Country { get; set; }
+        public ContactDTO Contact { get; set; }
+        public string Created_at { get; set; }
+        public string Updated_at { get; set; }
+    }
+
+    public class ContactDTO
+    {
+        public string Name { get; set; }
+        public string Phone { get; set; }
+        public string Email { get; set; }
+    }
+}
+
