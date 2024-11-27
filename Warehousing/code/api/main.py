@@ -6,6 +6,7 @@ import time #Testing speed
 
 from providers import auth_provider
 from providers import data_provider
+from providers import v2link_provider
 
 from processors import notification_processor
 
@@ -402,6 +403,10 @@ class ApiRequestHandler(http.server.BaseHTTPRequestHandler):
             new_warehouse = json.loads(post_data.decode())
             data_provider.fetch_warehouse_pool().add_warehouse(new_warehouse)
             data_provider.fetch_warehouse_pool().save()
+            try:
+                v2link_provider.v2_Post_Handler(new_warehouse, path[0])
+            except:
+                print("CCCCCCCCCCCC")
             self.send_response(201)
             self.end_headers()
         elif path[0] == "locations":
@@ -802,7 +807,7 @@ class ApiRequestHandler(http.server.BaseHTTPRequestHandler):
                 self.end_headers()
 
 if __name__ == "__main__":
-    PORT = 3000
+    PORT = 3001
     with socketserver.TCPServer(("", PORT), ApiRequestHandler) as httpd:
         auth_provider.init()
         data_provider.init()
