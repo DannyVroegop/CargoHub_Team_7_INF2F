@@ -13,6 +13,7 @@ builder.Services.AddDbContext<CargoContext>(options =>
 
 // Register the IWarehouseService and its implementation
 builder.Services.AddScoped<IWarehouseService, WarehouseService>();
+builder.Services.AddScoped<ILocationService, LocationService>();
 
 // Configure the application
 builder.WebHost.UseUrls("http://127.0.0.1:3000");

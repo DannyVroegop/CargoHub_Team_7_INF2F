@@ -147,7 +147,7 @@ namespace NewWarehouse.Migrations
                     Notes = table.Column<string>(type: "text", nullable: false),
                     ShippingNotes = table.Column<string>(type: "text", nullable: false),
                     PickingNotes = table.Column<string>(type: "text", nullable: false),
-                    WarehouseId = table.Column<int>(type: "integer", nullable: false),
+                    Warehouse_Id = table.Column<int>(type: "integer", nullable: false),
                     ShipTo = table.Column<int>(type: "integer", nullable: false),
                     BillTo = table.Column<int>(type: "integer", nullable: false),
                     ShipmentId = table.Column<int>(type: "integer", nullable: false),
@@ -265,7 +265,7 @@ namespace NewWarehouse.Migrations
                 {
                     Id = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    WarehouseId = table.Column<int>(type: "integer", nullable: false),
+                    Warehouse_Id = table.Column<int>(type: "integer", nullable: false),
                     Code = table.Column<string>(type: "text", nullable: false),
                     Name = table.Column<string>(type: "text", nullable: false),
                     Created_at = table.Column<string>(type: "text", nullable: false),

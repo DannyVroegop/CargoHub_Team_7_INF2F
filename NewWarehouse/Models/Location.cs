@@ -7,7 +7,7 @@ namespace Models{
 
     public class Location{
         public int Id{ get; set; }
-        public int WarehouseId{ get; set; }
+        public int Warehouse_Id{ get; set; }
         public string Code{ get; set; }
         public string Name{ get; set; }
         public string Created_at{ get; set; }
@@ -15,9 +15,9 @@ namespace Models{
 
         public Location(){}
 
-        public Location(int id, int warehouseId, string code, string name, string created_at, string updated_at){
+        public Location(int id, int warehouse_Id, string code, string name, string created_at, string updated_at){
             Id = id;
-            WarehouseId = warehouseId;
+            Warehouse_Id = warehouse_Id;
             Code = code;
             Name = name;
             Created_at = created_at;

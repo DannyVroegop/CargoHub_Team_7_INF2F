@@ -4,13 +4,13 @@ using Services;
 
 namespace Controllers
 {
-    [Route("api/v2/[controller]")]
+    [Route("api/v2/warehouses")]
     [ApiController]
-    public class WarehousesController : ControllerBase
+    public class WarehouseController : ControllerBase
     {
         private readonly IWarehouseService _warehouseService;
 
-        public WarehousesController(IWarehouseService warehouseService)
+        public WarehouseController(IWarehouseService warehouseService)
         {
             _warehouseService = warehouseService;
         }
@@ -22,6 +22,20 @@ namespace Controllers
             var warehouses = await _warehouseService.GetAllWarehousesAsync();
             var warehouseDTOs = warehouses.Select(MapWarehouseToDTO);
             return Ok(warehouseDTOs); // Return the list of DTOs
+        }
+
+        // GET: api/v2/warehouses/{id}
+        [HttpGet("{id}")]
+        public async Task<ActionResult<WarehouseDTO>> GetWarehouseById(int id)
+        {
+            var warehouse = await _warehouseService.GetWarehouseByIdAsync(id);
+            if (warehouse == null)
+            {
+                return NotFound(); // Return 404 if warehouse not found
+            }
+
+            var warehouseDTO = MapWarehouseToDTO(warehouse);
+            return Ok(warehouseDTO); // Return the warehouse DTO
         }
 
         // POST: api/v2/warehouses

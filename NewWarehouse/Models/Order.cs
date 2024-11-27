@@ -15,7 +15,7 @@ namespace Models{
         public string Notes{ get; set; }
         public string ShippingNotes{ get; set; }
         public string PickingNotes{ get; set; }
-        public int WarehouseId{ get; set; }
+        public int Warehouse_Id{ get; set; }
         public int ShipTo{ get; set; }
         public int BillTo{ get; set; }
         public int ShipmentId{ get; set; }
@@ -29,7 +29,7 @@ namespace Models{
 
         public Order(){}
 
-        public Order(int id, int sourceId, string orderDate, string requestdate , string reference, string referenceExtra, string orderStatus, string notes, string shippingNotes, string pickingnotes, int warehouseId, int shipTo, int billTo, int shipmentId, double totalAmmount, double totalDiscount, double totalTax, double totalSurcharge, string created_at, string updated_at, ICollection<OrderItem> orderItems){
+        public Order(int id, int sourceId, string orderDate, string requestdate , string reference, string referenceExtra, string orderStatus, string notes, string shippingNotes, string pickingnotes, int warehouse_Id, int shipTo, int billTo, int shipmentId, double totalAmmount, double totalDiscount, double totalTax, double totalSurcharge, string created_at, string updated_at, ICollection<OrderItem> orderItems){
             Id = id;
             SourceId = sourceId;
             OrderDate = orderDate;
@@ -40,7 +40,7 @@ namespace Models{
             Notes = notes;
             ShippingNotes = shippingNotes;
             PickingNotes = pickingnotes;
-            WarehouseId = warehouseId;
+            Warehouse_Id = warehouse_Id;
             ShipTo = shipTo;
             BillTo = billTo;
             ShipmentId = shipmentId;

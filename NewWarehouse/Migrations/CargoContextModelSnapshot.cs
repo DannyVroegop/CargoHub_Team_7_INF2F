@@ -312,7 +312,7 @@ namespace NewWarehouse.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<int>("WarehouseId")
+                    b.Property<int>("Warehouse_Id")
                         .HasColumnType("integer");
 
                     b.HasKey("Id");
@@ -394,7 +394,7 @@ namespace NewWarehouse.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<int>("WarehouseId")
+                    b.Property<int>("Warehouse_Id")
                         .HasColumnType("integer");
 
                     b.HasKey("Id");
