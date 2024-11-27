@@ -9,7 +9,7 @@ bool LoadData = false;
 builder.Services.AddControllersWithViews();
 
 // Register DbContext with the correct configuration access
-builder.Services.AddDbContext<WarehouseContext>(options =>
+builder.Services.AddDbContext<CargoContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("WarehousingContext")));
 
 //builder.Services.AddTransient<DataLoader.DataLoader>();

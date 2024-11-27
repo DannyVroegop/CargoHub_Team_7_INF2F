@@ -9,7 +9,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace NewWarehouse.Migrations
 {
-    [DbContext(typeof(WarehouseContext))]
+    [DbContext(typeof(CargoContext))]
     partial class WarehouseContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
