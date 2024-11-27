@@ -90,6 +90,11 @@ class Items(Base):
     def add_item(self, item):
         item["created_at"] = self.get_timestamp()
         item["updated_at"] = self.get_timestamp()
+        count = 0
+        for x in self.data:
+            if count < x["id"]:
+                count == x["id"]
+        item["id"] = count + 1
         self.data.append(item)
 
     def update_item(self, item_id, item):
