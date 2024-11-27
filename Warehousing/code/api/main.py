@@ -403,10 +403,7 @@ class ApiRequestHandler(http.server.BaseHTTPRequestHandler):
             new_warehouse = json.loads(post_data.decode())
             data_provider.fetch_warehouse_pool().add_warehouse(new_warehouse)
             data_provider.fetch_warehouse_pool().save()
-            try:
-                v2link_provider.v2_Post_Handler(new_warehouse, path[0])
-            except:
-                print("CCCCCCCCCCCC")
+            v2link_provider.v2_Post_Handler(new_warehouse, path[0])
             self.send_response(201)
             self.end_headers()
         elif path[0] == "locations":
@@ -415,6 +412,7 @@ class ApiRequestHandler(http.server.BaseHTTPRequestHandler):
             new_location = json.loads(post_data.decode())
             data_provider.fetch_location_pool().add_location(new_location)
             data_provider.fetch_location_pool().save()
+            v2link_provider.v2_Post_Handler(new_warehouse, path[0])
             self.send_response(201)
             self.end_headers()
         elif path[0] == "transfers":
@@ -424,6 +422,7 @@ class ApiRequestHandler(http.server.BaseHTTPRequestHandler):
             data_provider.fetch_transfer_pool().add_transfer(new_transfer)
             data_provider.fetch_transfer_pool().save()
             notification_processor.push(f"Scheduled batch transfer {new_transfer['id']}")
+            v2link_provider.v2_Post_Handler(new_warehouse, path[0])
             self.send_response(201)
             self.end_headers()
         elif path[0] == "items":
@@ -432,6 +431,7 @@ class ApiRequestHandler(http.server.BaseHTTPRequestHandler):
             new_item = json.loads(post_data.decode())
             data_provider.fetch_item_pool().add_item(new_item)
             data_provider.fetch_item_pool().save()
+            v2link_provider.v2_Post_Handler(new_warehouse, path[0])
             self.send_response(201)
             self.end_headers()
         elif path[0] == "inventories":
@@ -440,6 +440,7 @@ class ApiRequestHandler(http.server.BaseHTTPRequestHandler):
             new_inventory = json.loads(post_data.decode())
             data_provider.fetch_inventory_pool().add_inventory(new_inventory)
             data_provider.fetch_inventory_pool().save()
+            v2link_provider.v2_Post_Handler(new_warehouse, path[0])
             self.send_response(201)
             self.end_headers()
         elif path[0] == "suppliers":
@@ -448,6 +449,7 @@ class ApiRequestHandler(http.server.BaseHTTPRequestHandler):
             new_supplier = json.loads(post_data.decode())
             data_provider.fetch_supplier_pool().add_supplier(new_supplier)
             data_provider.fetch_supplier_pool().save()
+            v2link_provider.v2_Post_Handler(new_warehouse, path[0])
             self.send_response(201)
             self.end_headers()
         elif path[0] == "orders":
@@ -456,6 +458,7 @@ class ApiRequestHandler(http.server.BaseHTTPRequestHandler):
             new_order = json.loads(post_data.decode())
             data_provider.fetch_order_pool().add_order(new_order)
             data_provider.fetch_order_pool().save()
+            v2link_provider.v2_Post_Handler(new_warehouse, path[0])
             self.send_response(201)
             self.end_headers()
         elif path[0] == "clients":
@@ -464,6 +467,7 @@ class ApiRequestHandler(http.server.BaseHTTPRequestHandler):
             new_client = json.loads(post_data.decode())
             data_provider.fetch_client_pool().add_client(new_client)
             data_provider.fetch_client_pool().save()
+            v2link_provider.v2_Post_Handler(new_warehouse, path[0])
             self.send_response(201)
             self.end_headers()
         elif path[0] == "shipments":
@@ -472,6 +476,7 @@ class ApiRequestHandler(http.server.BaseHTTPRequestHandler):
             new_shipment = json.loads(post_data.decode())
             data_provider.fetch_shipment_pool().add_shipment(new_shipment)
             data_provider.fetch_shipment_pool().save()
+            v2link_provider.v2_Post_Handler(new_warehouse, path[0])
             self.send_response(201)
             self.end_headers()
         else:
@@ -508,6 +513,7 @@ class ApiRequestHandler(http.server.BaseHTTPRequestHandler):
             updated_warehouse = json.loads(post_data.decode())
             data_provider.fetch_warehouse_pool().update_warehouse(warehouse_id, updated_warehouse)
             data_provider.fetch_warehouse_pool().save()
+            v2link_provider.v2_Put_Handler(updated_warehouse, path[0], path[1])
             self.send_response(200)
             self.end_headers()
         elif path[0] == "locations":
@@ -517,6 +523,7 @@ class ApiRequestHandler(http.server.BaseHTTPRequestHandler):
             updated_location = json.loads(post_data.decode())
             data_provider.fetch_location_pool().update_location(location_id, updated_location)
             data_provider.fetch_location_pool().save()
+            v2link_provider.v2_Put_Handler(updated_warehouse, path[0], path[1])
             self.send_response(200)
             self.end_headers()
         elif path[0] == "transfers":
@@ -529,6 +536,7 @@ class ApiRequestHandler(http.server.BaseHTTPRequestHandler):
                     updated_transfer = json.loads(post_data.decode())
                     data_provider.fetch_transfer_pool().update_transfer(transfer_id, updated_transfer)
                     data_provider.fetch_transfer_pool().save()
+                    v2link_provider.v2_Put_Handler(updated_warehouse, path[0], path[1])
                     self.send_response(200)
                     self.end_headers()
                 case 3:

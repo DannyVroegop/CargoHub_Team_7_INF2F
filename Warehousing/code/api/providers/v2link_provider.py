@@ -3,19 +3,43 @@ import requests
 
 
 def v2_Post_Handler(data, path):
-    url = "http://127.0.0.1:3000/api/v2/" + path
-    print(url)
-    object = data
-    print("BBBBBBBBBBBBBBBBBBBBBBBBBB")
-    x = requests.post(url, json = object)
-    print("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
-    response = x.status_code()
     try:
-        print(response)
+        url = "http://127.0.0.1:3000/api/v2/" + path
+        object = data
+        x = requests.post(url, json = object)
+        response = x.status_code
+        if response == 201:
+            print("Response van API v2:", response)
+        else:
+            print("Geen respons ontvangen van API v2.")
     except:
-        print("Noresponse")
-    if response:
-        print("Respons van API v2:", response.status_code, response.json())
-    else:
-        print("Geen respons ontvangen van API v2.")
+        print("v2 problems")
+    return None
+
+def v2_Put_Handler(data, path, id):
+    try:
+        url = "http://127.0.0.1:3000/api/v2/" + path + "/" + id
+        object = data
+        x = requests.put(url, json = object)
+        response = x.status_code
+        if response == 201:
+            print("Response van API v2:", response)
+        else:
+            print("Geen respons ontvangen van API v2.")
+    except:
+        print("v2 problems")
+    return None
+
+def v2_Put_Handler(data, path, id):
+    try:
+        url = "http://127.0.0.1:3000/api/v2/" + path + "/" + id
+        object = data
+        x = requests.put(url, json = object)
+        response = x.status_code
+        if response == 201:
+            print("Response van API v2:", response)
+        else:
+            print("Geen respons ontvangen van API v2.")
+    except:
+        print("v2 problems")
     return None
