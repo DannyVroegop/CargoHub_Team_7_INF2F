@@ -28,37 +28,54 @@ namespace Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Item>()
-            .HasKey(i => i.Uid); // This sets 'Uid' as the primary key for Item.
+                .HasKey(i => i.Uid); // Set 'Uid' as the primary key for Item.
 
-            // Configure one-to-many relationships
-
+            // Configure composite key for OrderItem
             modelBuilder.Entity<OrderItem>()
-                .HasKey(oi => new { oi.Order_Id, oi.Item_Id });  // Composite key
+                .HasKey(oi => new { oi.Order_Id, oi.Item_Uid }); // Composite key using Item_Uid.
 
             modelBuilder.Entity<OrderItem>()
                 .HasOne(oi => oi.Order)
                 .WithMany(o => o.OrderItems)
-                .HasForeignKey(oi => oi.Order_Id);
+                .HasForeignKey(oi => oi.Order_Id); // Foreign key to Order.
 
+            modelBuilder.Entity<OrderItem>()
+                .HasOne(oi => oi.Item)
+                .WithMany() // Assuming no navigation property in Item for OrderItems.
+                .HasForeignKey(oi => oi.Item_Uid)
+                .HasPrincipalKey(i => i.Uid); // Map Item_Uid to Uid in Item.
 
+            // Configure composite key for TransferItem
             modelBuilder.Entity<TransferItem>()
-                .HasKey(oi => new { oi.Transfer_Id, oi.Item_Id });  // Composite key
-            
+                .HasKey(ti => new { ti.Transfer_Id, ti.Item_Uid }); // Composite key using Item_Uid.
+
             modelBuilder.Entity<TransferItem>()
                 .HasOne(ti => ti.Transfer)
                 .WithMany(t => t.TransferItems)
-                .HasForeignKey(ti => ti.Transfer_Id);
+                .HasForeignKey(ti => ti.Transfer_Id); // Foreign key to Transfer.
 
+            modelBuilder.Entity<TransferItem>()
+                .HasOne(ti => ti.Item)
+                .WithMany() // Assuming no navigation property in Item for TransferItems.
+                .HasForeignKey(ti => ti.Item_Uid)
+                .HasPrincipalKey(i => i.Uid); // Map Item_Uid to Uid in Item.
 
+            // Configure composite key for ShipmentItem
             modelBuilder.Entity<ShipmentItem>()
-                .HasKey(oi => new { oi.Shipment_Id, oi.Item_Id });  // Composite key            
+                .HasKey(si => new { si.Shipment_Id, si.Item_Uid }); // Composite key using Item_Uid.
 
             modelBuilder.Entity<ShipmentItem>()
                 .HasOne(si => si.Shipment)
                 .WithMany(s => s.ShipmentItems)
-                .HasForeignKey(si => si.Shipment_Id);
+                .HasForeignKey(si => si.Shipment_Id); // Foreign key to Shipment.
 
-            // Additional configurations can be added here (e.g., for composite keys, relationships, etc.)
+            modelBuilder.Entity<ShipmentItem>()
+                .HasOne(si => si.Item)
+                .WithMany() // Assuming no navigation property in Item for ShipmentItems.
+                .HasForeignKey(si => si.Item_Uid)
+                .HasPrincipalKey(i => i.Uid); // Map Item_Uid to Uid in Item.
+
+            // Additional configurations (if needed)...
 
             base.OnModelCreating(modelBuilder);
         }

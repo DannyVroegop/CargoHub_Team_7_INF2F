@@ -32,7 +32,7 @@ namespace Models
 
     public class TransferDTO
     {
-        public int Id { get; set; }
+        public int Id { get; set; } // Optional for input, but good for mapping back
         public string Reference { get; set; }
         public int Transfer_From { get; set; }
         public int Transfer_To { get; set; }
