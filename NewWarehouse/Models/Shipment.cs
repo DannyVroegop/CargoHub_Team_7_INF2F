@@ -7,44 +7,44 @@ namespace Models{
 
     public class Shipment{
         public int Id{ get; set; }
-        public int OrderId{ get; set; }
-        public int SourceId{ get; set; }
-        public string OrderDate{ get; set; }
-        public string Requestdate{ get; set; }
-        public string ShipmentDate{ get; set; }
-        public string ShipmentType{ get; set; }
-        public string ShipmentStatus{ get; set; }
+        public int Order_Id{ get; set; }
+        public int Source_Id{ get; set; }
+        public string Order_Date{ get; set; }
+        public string Request_date{ get; set; }
+        public string Shipment_Date{ get; set; }
+        public string Shipment_Type{ get; set; }
+        public string Shipment_Status{ get; set; }
         public string Notes{ get; set; }
-        public string CarrierCode{ get; set; }
-        public string CarrierDescription{ get; set; }
-        public string ServiceCode{ get; set; }
-        public string PaymentType{ get; set; }
-        public string TransferMode{ get; set; }
-        public int TotalPackageCount{ get; set; }
-        public double TotalPackageWeight{ get; set; }
+        public string Carrier_Code{ get; set; }
+        public string Carrier_Description{ get; set; }
+        public string Service_Code{ get; set; }
+        public string Payment_Type{ get; set; }
+        public string Transfer_Mode{ get; set; }
+        public int Total_Package_Count{ get; set; }
+        public double Total_Package_Weight{ get; set; }
         public string Created_at{ get; set; }
         public string Updated_at{ get; set; }
         public ICollection<ShipmentItem> ShipmentItems { get; set; }
 
         public Shipment(){}
 
-        public Shipment(int id,int orderId, int sourceId, string orderDate, string requestdate , string shipmentDate, string shipmentType, string shipmentStatus, string notes, string carrierCode, string carrierDescription, string serviceCode, string paymentType, string transferMode, int totalPackageCount, double totalPackageWeight, string created_at, string updated_at, ICollection<ShipmentItem> shipmentItems){
+        public Shipment(int id,int order_Id, int source_Id, string order_Date, string request_date , string shipment_Date, string shipment_Type, string shipment_Status, string notes, string carrier_Code, string carrier_Description, string service_Code, string payment_Type, string transfer_Mode, int total_Package_Count, double total_Package_Weight, string created_at, string updated_at, ICollection<ShipmentItem> shipmentItems){
             Id = id;
-            OrderId = orderId;
-            SourceId = sourceId;
-            OrderDate = orderDate;
-            Requestdate = requestdate;
-            ShipmentDate = shipmentDate;
-            ShipmentType = shipmentType;
-            ShipmentStatus = shipmentStatus;
+            Order_Id = order_Id;
+            Source_Id = source_Id;
+            Order_Date = order_Date;
+            Request_date = request_date;
+            Shipment_Date = shipment_Date;
+            Shipment_Type = shipment_Type;
+            Shipment_Status = shipment_Status;
             Notes = notes;
-            CarrierCode = carrierCode;
-            CarrierDescription = carrierDescription;
-            ServiceCode = serviceCode;
-            PaymentType = paymentType;
-            TransferMode = transferMode;
-            TotalPackageCount = totalPackageCount;
-            TotalPackageWeight = totalPackageWeight;
+            Carrier_Code = carrier_Code;
+            Carrier_Description = carrier_Description;
+            Service_Code = service_Code;
+            Payment_Type = payment_Type;
+            Transfer_Mode = transfer_Mode;
+            Total_Package_Count = total_Package_Count;
+            Total_Package_Weight = total_Package_Weight;
             Created_at = created_at;
             Updated_at = updated_at;
             ShipmentItems = shipmentItems;

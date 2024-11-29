@@ -4,10 +4,10 @@ namespace Models
 {
     public class OrderItem
     {
-        public int OrderId { get; set; }
+        public int Order_Id { get; set; }
         public Order Order { get; set; }
 
-        public string ItemId { get; set; }
+        public string Item_Id { get; set; }
         public Item Item { get; set; }
 
         public int Quantity { get; set; }

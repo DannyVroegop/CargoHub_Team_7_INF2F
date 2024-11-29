@@ -22,43 +22,47 @@ namespace Data
         public DbSet<ShipmentItem> ShipmentItems { get; set; }
         public DbSet<TransferItem> TransferItems { get; set; }
 
-                protected override void OnModelCreating(ModelBuilder modelBuilder)
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
 
+
+            modelBuilder.Entity<Item>()
+            .HasKey(i => i.Uid); // This sets 'Uid' as the primary key for Item.
+
             // Configuring many-to-many relationships
             modelBuilder.Entity<OrderItem>()
-                .HasKey(oi => new { oi.OrderId, oi.ItemId });
+                .HasKey(oi => new { oi.Order_Id, oi.Item_Id });
             modelBuilder.Entity<OrderItem>()
                 .HasOne(oi => oi.Order)
                 .WithMany(o => o.OrderItems)
-                .HasForeignKey(oi => oi.OrderId);
+                .HasForeignKey(oi => oi.Order_Id);
             modelBuilder.Entity<OrderItem>()
                 .HasOne(oi => oi.Item)
                 .WithMany(i => i.OrderItems)
-                .HasForeignKey(oi => oi.ItemId);
+                .HasForeignKey(oi => oi.Item_Id);
 
             modelBuilder.Entity<ShipmentItem>()
-                .HasKey(si => new { si.ShipmentId, si.ItemId });
+                .HasKey(si => new { si.Shipment_Id, si.Item_Id });
             modelBuilder.Entity<ShipmentItem>()
                 .HasOne(si => si.Shipment)
                 .WithMany(s => s.ShipmentItems)
-                .HasForeignKey(si => si.ShipmentId);
+                .HasForeignKey(si => si.Shipment_Id);
             modelBuilder.Entity<ShipmentItem>()
                 .HasOne(si => si.Item)
                 .WithMany(i => i.ShipmentItems)
-                .HasForeignKey(si => si.ItemId);
+                .HasForeignKey(si => si.Item_Id);
 
             modelBuilder.Entity<TransferItem>()
-                .HasKey(ti => new { ti.TransferId, ti.ItemId });
+                .HasKey(ti => new { ti.Transfer_Id, ti.Item_Id });
             modelBuilder.Entity<TransferItem>()
                 .HasOne(ti => ti.Transfer)
                 .WithMany(t => t.TransferItems)
-                .HasForeignKey(ti => ti.TransferId);
+                .HasForeignKey(ti => ti.Transfer_Id);
             modelBuilder.Entity<TransferItem>()
                 .HasOne(ti => ti.Item)
                 .WithMany(i => i.TransferItems)
-                .HasForeignKey(ti => ti.ItemId);
+                .HasForeignKey(ti => ti.Item_Id);
         }
     }
 }

@@ -6,7 +6,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace NewWarehouse.Migrations
 {
     /// <inheritdoc />
-    public partial class aaaaaaaa : Migration
+    public partial class innitial_build : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -42,12 +42,12 @@ namespace NewWarehouse.Migrations
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     Item_id = table.Column<string>(type: "text", nullable: false),
                     Description = table.Column<string>(type: "text", nullable: false),
-                    ItemReference = table.Column<string>(type: "text", nullable: false),
-                    TotalOnHand = table.Column<int>(type: "integer", nullable: false),
-                    TotalExpected = table.Column<int>(type: "integer", nullable: false),
-                    TotalOrdered = table.Column<int>(type: "integer", nullable: false),
-                    TotalAllocated = table.Column<int>(type: "integer", nullable: false),
-                    TotalAvailable = table.Column<int>(type: "integer", nullable: false),
+                    Item_Reference = table.Column<string>(type: "text", nullable: false),
+                    Total_On_Hand = table.Column<int>(type: "integer", nullable: false),
+                    Total_Expected = table.Column<int>(type: "integer", nullable: false),
+                    Total_Ordered = table.Column<int>(type: "integer", nullable: false),
+                    Total_Allocated = table.Column<int>(type: "integer", nullable: false),
+                    Total_Available = table.Column<int>(type: "integer", nullable: false),
                     Created_at = table.Column<string>(type: "text", nullable: false),
                     Updated_at = table.Column<string>(type: "text", nullable: false)
                 },
@@ -92,28 +92,28 @@ namespace NewWarehouse.Migrations
                 name: "Items",
                 columns: table => new
                 {
-                    Id = table.Column<string>(type: "text", nullable: false),
+                    Uid = table.Column<string>(type: "text", nullable: false),
                     Code = table.Column<string>(type: "text", nullable: false),
                     Description = table.Column<string>(type: "text", nullable: false),
-                    ShortDescription = table.Column<string>(type: "text", nullable: false),
-                    UpcCode = table.Column<string>(type: "text", nullable: false),
-                    ModelNumber = table.Column<string>(type: "text", nullable: false),
-                    CommodityCode = table.Column<string>(type: "text", nullable: false),
-                    ItemLineId = table.Column<int>(type: "integer", nullable: false),
-                    ItemGroupId = table.Column<int>(type: "integer", nullable: false),
-                    ItemTypeId = table.Column<int>(type: "integer", nullable: false),
-                    UnitPurchaseQuantity = table.Column<int>(type: "integer", nullable: false),
-                    UnitOrderQuantity = table.Column<int>(type: "integer", nullable: false),
-                    PackOrderQuantity = table.Column<int>(type: "integer", nullable: false),
-                    SupplierId = table.Column<int>(type: "integer", nullable: false),
-                    SupplierCode = table.Column<string>(type: "text", nullable: false),
-                    SupplierPartNumber = table.Column<string>(type: "text", nullable: false),
+                    Short_Description = table.Column<string>(type: "text", nullable: false),
+                    Upc_Code = table.Column<string>(type: "text", nullable: false),
+                    Model_Number = table.Column<string>(type: "text", nullable: false),
+                    Commodity_Code = table.Column<string>(type: "text", nullable: false),
+                    Item_Line = table.Column<int>(type: "integer", nullable: false),
+                    Item_Group = table.Column<int>(type: "integer", nullable: false),
+                    Item_Type = table.Column<int>(type: "integer", nullable: false),
+                    Unit_Purchase_Quantity = table.Column<int>(type: "integer", nullable: false),
+                    Unit_Order_Quantity = table.Column<int>(type: "integer", nullable: false),
+                    Pack_Order_Quantity = table.Column<int>(type: "integer", nullable: false),
+                    Supplier_Id = table.Column<int>(type: "integer", nullable: false),
+                    Supplier_Code = table.Column<string>(type: "text", nullable: false),
+                    Supplier_Part_Number = table.Column<string>(type: "text", nullable: false),
                     Created_at = table.Column<string>(type: "text", nullable: false),
                     Updated_at = table.Column<string>(type: "text", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Items", x => x.Id);
+                    table.PrimaryKey("PK_Items", x => x.Uid);
                 });
 
             migrationBuilder.CreateTable(
@@ -138,23 +138,23 @@ namespace NewWarehouse.Migrations
                 {
                     Id = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    SourceId = table.Column<int>(type: "integer", nullable: false),
-                    OrderDate = table.Column<string>(type: "text", nullable: false),
-                    Requestdate = table.Column<string>(type: "text", nullable: false),
+                    Source_Id = table.Column<int>(type: "integer", nullable: false),
+                    Order_Date = table.Column<string>(type: "text", nullable: false),
+                    Request_date = table.Column<string>(type: "text", nullable: false),
                     Reference = table.Column<string>(type: "text", nullable: false),
-                    ReferenceExtra = table.Column<string>(type: "text", nullable: false),
-                    OrderStatus = table.Column<string>(type: "text", nullable: false),
+                    Reference_Extra = table.Column<string>(type: "text", nullable: false),
+                    Order_Status = table.Column<string>(type: "text", nullable: false),
                     Notes = table.Column<string>(type: "text", nullable: false),
-                    ShippingNotes = table.Column<string>(type: "text", nullable: false),
-                    PickingNotes = table.Column<string>(type: "text", nullable: false),
+                    Shipping_Notes = table.Column<string>(type: "text", nullable: false),
+                    Picking_Notes = table.Column<string>(type: "text", nullable: false),
                     Warehouse_Id = table.Column<int>(type: "integer", nullable: false),
-                    ShipTo = table.Column<int>(type: "integer", nullable: false),
-                    BillTo = table.Column<int>(type: "integer", nullable: false),
-                    ShipmentId = table.Column<int>(type: "integer", nullable: false),
-                    TotalAmmount = table.Column<double>(type: "double precision", nullable: false),
-                    TotalDiscount = table.Column<double>(type: "double precision", nullable: false),
-                    TotalTax = table.Column<double>(type: "double precision", nullable: false),
-                    TotalSurcharge = table.Column<double>(type: "double precision", nullable: false),
+                    Ship_To = table.Column<int>(type: "integer", nullable: false),
+                    Bill_To = table.Column<int>(type: "integer", nullable: false),
+                    Shipment_Id = table.Column<int>(type: "integer", nullable: false),
+                    Total_Ammount = table.Column<double>(type: "double precision", nullable: false),
+                    Total_Discount = table.Column<double>(type: "double precision", nullable: false),
+                    Total_Tax = table.Column<double>(type: "double precision", nullable: false),
+                    Total_Surcharge = table.Column<double>(type: "double precision", nullable: false),
                     Created_at = table.Column<string>(type: "text", nullable: false),
                     Updated_at = table.Column<string>(type: "text", nullable: false)
                 },
@@ -169,21 +169,21 @@ namespace NewWarehouse.Migrations
                 {
                     Id = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    OrderId = table.Column<int>(type: "integer", nullable: false),
-                    SourceId = table.Column<int>(type: "integer", nullable: false),
-                    OrderDate = table.Column<string>(type: "text", nullable: false),
-                    Requestdate = table.Column<string>(type: "text", nullable: false),
-                    ShipmentDate = table.Column<string>(type: "text", nullable: false),
-                    ShipmentType = table.Column<string>(type: "text", nullable: false),
-                    ShipmentStatus = table.Column<string>(type: "text", nullable: false),
+                    Order_Id = table.Column<int>(type: "integer", nullable: false),
+                    Source_Id = table.Column<int>(type: "integer", nullable: false),
+                    Order_Date = table.Column<string>(type: "text", nullable: false),
+                    Request_date = table.Column<string>(type: "text", nullable: false),
+                    Shipment_Date = table.Column<string>(type: "text", nullable: false),
+                    Shipment_Type = table.Column<string>(type: "text", nullable: false),
+                    Shipment_Status = table.Column<string>(type: "text", nullable: false),
                     Notes = table.Column<string>(type: "text", nullable: false),
-                    CarrierCode = table.Column<string>(type: "text", nullable: false),
-                    CarrierDescription = table.Column<string>(type: "text", nullable: false),
-                    ServiceCode = table.Column<string>(type: "text", nullable: false),
-                    PaymentType = table.Column<string>(type: "text", nullable: false),
-                    TransferMode = table.Column<string>(type: "text", nullable: false),
-                    TotalPackageCount = table.Column<int>(type: "integer", nullable: false),
-                    TotalPackageWeight = table.Column<double>(type: "double precision", nullable: false),
+                    Carrier_Code = table.Column<string>(type: "text", nullable: false),
+                    Carrier_Description = table.Column<string>(type: "text", nullable: false),
+                    Service_Code = table.Column<string>(type: "text", nullable: false),
+                    Payment_Type = table.Column<string>(type: "text", nullable: false),
+                    Transfer_Mode = table.Column<string>(type: "text", nullable: false),
+                    Total_Package_Count = table.Column<int>(type: "integer", nullable: false),
+                    Total_Package_Weight = table.Column<double>(type: "double precision", nullable: false),
                     Created_at = table.Column<string>(type: "text", nullable: false),
                     Updated_at = table.Column<string>(type: "text", nullable: false)
                 },
@@ -201,16 +201,16 @@ namespace NewWarehouse.Migrations
                     Code = table.Column<string>(type: "text", nullable: false),
                     Name = table.Column<string>(type: "text", nullable: false),
                     Address = table.Column<string>(type: "text", nullable: false),
+                    Address_Extra = table.Column<string>(type: "text", nullable: true),
                     City = table.Column<string>(type: "text", nullable: false),
                     Zip_Code = table.Column<string>(type: "text", nullable: false),
                     Province = table.Column<string>(type: "text", nullable: false),
                     Country = table.Column<string>(type: "text", nullable: false),
-                    ContactName = table.Column<string>(type: "text", nullable: false),
-                    ContactPhone = table.Column<string>(type: "text", nullable: false),
+                    Contact_Name = table.Column<string>(type: "text", nullable: false),
+                    Phonenumber = table.Column<string>(type: "text", nullable: false),
                     Reference = table.Column<string>(type: "text", nullable: false),
                     Created_at = table.Column<string>(type: "text", nullable: false),
-                    Updated_at = table.Column<string>(type: "text", nullable: false),
-                    AddressExtra = table.Column<string>(type: "text", nullable: false)
+                    Updated_at = table.Column<string>(type: "text", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -224,9 +224,9 @@ namespace NewWarehouse.Migrations
                     Id = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     Reference = table.Column<string>(type: "text", nullable: false),
-                    TransferFrom = table.Column<string>(type: "text", nullable: false),
-                    TransferTo = table.Column<string>(type: "text", nullable: false),
-                    TransferStatus = table.Column<string>(type: "text", nullable: false),
+                    Transfer_From = table.Column<string>(type: "text", nullable: false),
+                    Transfer_To = table.Column<string>(type: "text", nullable: false),
+                    Transfer_Status = table.Column<string>(type: "text", nullable: false),
                     Created_at = table.Column<string>(type: "text", nullable: false),
                     Updated_at = table.Column<string>(type: "text", nullable: false)
                 },
@@ -286,22 +286,22 @@ namespace NewWarehouse.Migrations
                 name: "OrderItem",
                 columns: table => new
                 {
-                    OrderId = table.Column<int>(type: "integer", nullable: false),
-                    ItemId = table.Column<string>(type: "text", nullable: false),
+                    Order_Id = table.Column<int>(type: "integer", nullable: false),
+                    Item_Id = table.Column<string>(type: "text", nullable: false),
                     Quantity = table.Column<int>(type: "integer", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_OrderItem", x => new { x.OrderId, x.ItemId });
+                    table.PrimaryKey("PK_OrderItem", x => new { x.Order_Id, x.Item_Id });
                     table.ForeignKey(
-                        name: "FK_OrderItem_Items_ItemId",
-                        column: x => x.ItemId,
+                        name: "FK_OrderItem_Items_Item_Id",
+                        column: x => x.Item_Id,
                         principalTable: "Items",
-                        principalColumn: "Id",
+                        principalColumn: "Uid",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_OrderItem_Orders_OrderId",
-                        column: x => x.OrderId,
+                        name: "FK_OrderItem_Orders_Order_Id",
+                        column: x => x.Order_Id,
                         principalTable: "Orders",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -311,22 +311,22 @@ namespace NewWarehouse.Migrations
                 name: "ShipmentItems",
                 columns: table => new
                 {
-                    ShipmentId = table.Column<int>(type: "integer", nullable: false),
-                    ItemId = table.Column<string>(type: "text", nullable: false),
+                    Shipment_Id = table.Column<int>(type: "integer", nullable: false),
+                    Item_Id = table.Column<string>(type: "text", nullable: false),
                     Quantity = table.Column<int>(type: "integer", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ShipmentItems", x => new { x.ShipmentId, x.ItemId });
+                    table.PrimaryKey("PK_ShipmentItems", x => new { x.Shipment_Id, x.Item_Id });
                     table.ForeignKey(
-                        name: "FK_ShipmentItems_Items_ItemId",
-                        column: x => x.ItemId,
+                        name: "FK_ShipmentItems_Items_Item_Id",
+                        column: x => x.Item_Id,
                         principalTable: "Items",
-                        principalColumn: "Id",
+                        principalColumn: "Uid",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_ShipmentItems_Shipments_ShipmentId",
-                        column: x => x.ShipmentId,
+                        name: "FK_ShipmentItems_Shipments_Shipment_Id",
+                        column: x => x.Shipment_Id,
                         principalTable: "Shipments",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -336,22 +336,22 @@ namespace NewWarehouse.Migrations
                 name: "TransferItems",
                 columns: table => new
                 {
-                    TransferId = table.Column<int>(type: "integer", nullable: false),
-                    ItemId = table.Column<string>(type: "text", nullable: false),
+                    Transfer_Id = table.Column<int>(type: "integer", nullable: false),
+                    Item_Id = table.Column<string>(type: "text", nullable: false),
                     Quantity = table.Column<int>(type: "integer", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_TransferItems", x => new { x.TransferId, x.ItemId });
+                    table.PrimaryKey("PK_TransferItems", x => new { x.Transfer_Id, x.Item_Id });
                     table.ForeignKey(
-                        name: "FK_TransferItems_Items_ItemId",
-                        column: x => x.ItemId,
+                        name: "FK_TransferItems_Items_Item_Id",
+                        column: x => x.Item_Id,
                         principalTable: "Items",
-                        principalColumn: "Id",
+                        principalColumn: "Uid",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_TransferItems_Transfers_TransferId",
-                        column: x => x.TransferId,
+                        name: "FK_TransferItems_Transfers_Transfer_Id",
+                        column: x => x.Transfer_Id,
                         principalTable: "Transfers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -363,19 +363,19 @@ namespace NewWarehouse.Migrations
                 column: "InventoryId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_OrderItem_ItemId",
+                name: "IX_OrderItem_Item_Id",
                 table: "OrderItem",
-                column: "ItemId");
+                column: "Item_Id");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ShipmentItems_ItemId",
+                name: "IX_ShipmentItems_Item_Id",
                 table: "ShipmentItems",
-                column: "ItemId");
+                column: "Item_Id");
 
             migrationBuilder.CreateIndex(
-                name: "IX_TransferItems_ItemId",
+                name: "IX_TransferItems_Item_Id",
                 table: "TransferItems",
-                column: "ItemId");
+                column: "Item_Id");
         }
 
         /// <inheritdoc />

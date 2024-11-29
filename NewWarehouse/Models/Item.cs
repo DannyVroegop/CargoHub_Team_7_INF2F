@@ -6,22 +6,22 @@ using System.Threading.Tasks;
 namespace Models{
 
     public class Item{
-        public string Id{ get; set; }
+        public string Uid{ get; set; }
         public string Code{ get; set; }
         public string Description{ get; set; }
-        public string ShortDescription{ get; set; }
-        public string UpcCode{ get; set; }
-        public string ModelNumber{ get; set; }
-        public string CommodityCode{ get; set; }
-        public int ItemLineId{ get; set; }
-        public int ItemGroupId{ get; set; }
-        public int ItemTypeId{ get; set; }
-        public int UnitPurchaseQuantity{ get; set; }
-        public int UnitOrderQuantity{ get; set; }
-        public int PackOrderQuantity{ get; set; }
-        public int SupplierId{ get; set; }
-        public string SupplierCode{ get; set; }
-        public string SupplierPartNumber{ get; set; }
+        public string Short_Description{ get; set; }
+        public string Upc_Code{ get; set; }
+        public string Model_Number{ get; set; }
+        public string Commodity_Code{ get; set; }
+        public int Item_Line{ get; set; }
+        public int Item_Group{ get; set; }
+        public int Item_Type{ get; set; }
+        public int Unit_Purchase_Quantity{ get; set; }
+        public int Unit_Order_Quantity{ get; set; }
+        public int Pack_Order_Quantity{ get; set; }
+        public int Supplier_Id{ get; set; }
+        public string Supplier_Code{ get; set; }
+        public string Supplier_Part_Number{ get; set; }
         public string Created_at{ get; set; }
         public string Updated_at{ get; set; }
         public ICollection<OrderItem> OrderItems { get; set; }
@@ -30,23 +30,23 @@ namespace Models{
 
         public Item(){}
 
-        public Item(string id, string code, string description, string shortDescription, string upcCode, string modelNumber, string commodityCode, int itemLineId, int itemGroupId, int itemTypeId, int unitPurchaseQuantity, int unitOrderQuantity, int packOrderQuantity, int supplierId, string supplierCode, string supplierPartNumber, string created_at, string updated_at, ICollection<OrderItem> orderItems, ICollection<ShipmentItem> shipmentItems, ICollection<TransferItem> transferItems){
-            Id = id;
+        public Item(string uid, string code, string description, string short_Description, string upc_Code, string model_Number, string commodity_Code, int item_Line, int item_Group, int item_Type, int unit_Purchase_Quantity, int unit_Order_Quantity, int pack_Order_Quantity, int supplier_Id, string supplier_Code, string supplier_Part_Number, string created_at, string updated_at, ICollection<OrderItem> orderItems, ICollection<ShipmentItem> shipmentItems, ICollection<TransferItem> transferItems){
+            Uid = uid;
             Code = code;
             Description = description;
-            ShortDescription = shortDescription;
-            UpcCode = upcCode;
-            ModelNumber = modelNumber;
-            CommodityCode = commodityCode;
-            ItemLineId = itemLineId;
-            ItemGroupId = itemGroupId;
-            ItemTypeId = itemTypeId;
-            UnitPurchaseQuantity = unitPurchaseQuantity;
-            UnitOrderQuantity = unitOrderQuantity;
-            PackOrderQuantity = packOrderQuantity;
-            SupplierId = supplierId;
-            SupplierCode = supplierCode;
-            SupplierPartNumber = supplierPartNumber;
+            Short_Description = short_Description;
+            Upc_Code = upc_Code;
+            Model_Number = model_Number;
+            Commodity_Code = commodity_Code;
+            Item_Line = item_Line;
+            Item_Group = item_Group;
+            Item_Type = item_Type;
+            Unit_Purchase_Quantity = unit_Purchase_Quantity;
+            Unit_Order_Quantity = unit_Order_Quantity;
+            Pack_Order_Quantity = pack_Order_Quantity;
+            Supplier_Id = supplier_Id;
+            Supplier_Code = supplier_Code;
+            Supplier_Part_Number = supplier_Part_Number;
             Created_at = created_at;
             Updated_at = updated_at;
             OrderItems = orderItems;

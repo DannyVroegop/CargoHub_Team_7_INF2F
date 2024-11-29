@@ -95,7 +95,7 @@ namespace NewWarehouse.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("ItemReference")
+                    b.Property<string>("Item_Reference")
                         .IsRequired()
                         .HasColumnType("text");
 
@@ -103,19 +103,19 @@ namespace NewWarehouse.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<int>("TotalAllocated")
+                    b.Property<int>("Total_Allocated")
                         .HasColumnType("integer");
 
-                    b.Property<int>("TotalAvailable")
+                    b.Property<int>("Total_Available")
                         .HasColumnType("integer");
 
-                    b.Property<int>("TotalExpected")
+                    b.Property<int>("Total_Expected")
                         .HasColumnType("integer");
 
-                    b.Property<int>("TotalOnHand")
+                    b.Property<int>("Total_On_Hand")
                         .HasColumnType("integer");
 
-                    b.Property<int>("TotalOrdered")
+                    b.Property<int>("Total_Ordered")
                         .HasColumnType("integer");
 
                     b.Property<string>("Updated_at")
@@ -129,14 +129,14 @@ namespace NewWarehouse.Migrations
 
             modelBuilder.Entity("Models.Item", b =>
                 {
-                    b.Property<string>("Id")
+                    b.Property<string>("Uid")
                         .HasColumnType("text");
 
                     b.Property<string>("Code")
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("CommodityCode")
+                    b.Property<string>("Commodity_Code")
                         .IsRequired()
                         .HasColumnType("text");
 
@@ -148,44 +148,44 @@ namespace NewWarehouse.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<int>("ItemGroupId")
+                    b.Property<int>("Item_Group")
                         .HasColumnType("integer");
 
-                    b.Property<int>("ItemLineId")
+                    b.Property<int>("Item_Line")
                         .HasColumnType("integer");
 
-                    b.Property<int>("ItemTypeId")
+                    b.Property<int>("Item_Type")
                         .HasColumnType("integer");
 
-                    b.Property<string>("ModelNumber")
+                    b.Property<string>("Model_Number")
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<int>("PackOrderQuantity")
+                    b.Property<int>("Pack_Order_Quantity")
                         .HasColumnType("integer");
 
-                    b.Property<string>("ShortDescription")
+                    b.Property<string>("Short_Description")
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("SupplierCode")
+                    b.Property<string>("Supplier_Code")
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<int>("SupplierId")
+                    b.Property<int>("Supplier_Id")
                         .HasColumnType("integer");
 
-                    b.Property<string>("SupplierPartNumber")
+                    b.Property<string>("Supplier_Part_Number")
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<int>("UnitOrderQuantity")
+                    b.Property<int>("Unit_Order_Quantity")
                         .HasColumnType("integer");
 
-                    b.Property<int>("UnitPurchaseQuantity")
+                    b.Property<int>("Unit_Purchase_Quantity")
                         .HasColumnType("integer");
 
-                    b.Property<string>("UpcCode")
+                    b.Property<string>("Upc_Code")
                         .IsRequired()
                         .HasColumnType("text");
 
@@ -193,7 +193,7 @@ namespace NewWarehouse.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.HasKey("Id");
+                    b.HasKey("Uid");
 
                     b.ToTable("Items");
                 });
@@ -330,7 +330,7 @@ namespace NewWarehouse.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("BillTo")
+                    b.Property<int>("Bill_To")
                         .HasColumnType("integer");
 
                     b.Property<string>("Created_at")
@@ -341,15 +341,15 @@ namespace NewWarehouse.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("OrderDate")
+                    b.Property<string>("Order_Date")
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("OrderStatus")
+                    b.Property<string>("Order_Status")
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("PickingNotes")
+                    b.Property<string>("Picking_Notes")
                         .IsRequired()
                         .HasColumnType("text");
 
@@ -357,37 +357,37 @@ namespace NewWarehouse.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("ReferenceExtra")
+                    b.Property<string>("Reference_Extra")
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("Requestdate")
+                    b.Property<string>("Request_date")
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<int>("ShipTo")
+                    b.Property<int>("Ship_To")
                         .HasColumnType("integer");
 
-                    b.Property<int>("ShipmentId")
+                    b.Property<int>("Shipment_Id")
                         .HasColumnType("integer");
 
-                    b.Property<string>("ShippingNotes")
+                    b.Property<string>("Shipping_Notes")
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<int>("SourceId")
+                    b.Property<int>("Source_Id")
                         .HasColumnType("integer");
 
-                    b.Property<double>("TotalAmmount")
+                    b.Property<double>("Total_Ammount")
                         .HasColumnType("double precision");
 
-                    b.Property<double>("TotalDiscount")
+                    b.Property<double>("Total_Discount")
                         .HasColumnType("double precision");
 
-                    b.Property<double>("TotalSurcharge")
+                    b.Property<double>("Total_Surcharge")
                         .HasColumnType("double precision");
 
-                    b.Property<double>("TotalTax")
+                    b.Property<double>("Total_Tax")
                         .HasColumnType("double precision");
 
                     b.Property<string>("Updated_at")
@@ -404,18 +404,18 @@ namespace NewWarehouse.Migrations
 
             modelBuilder.Entity("Models.OrderItem", b =>
                 {
-                    b.Property<int>("OrderId")
+                    b.Property<int>("Order_Id")
                         .HasColumnType("integer");
 
-                    b.Property<string>("ItemId")
+                    b.Property<string>("Item_Id")
                         .HasColumnType("text");
 
                     b.Property<int>("Quantity")
                         .HasColumnType("integer");
 
-                    b.HasKey("OrderId", "ItemId");
+                    b.HasKey("Order_Id", "Item_Id");
 
-                    b.HasIndex("ItemId");
+                    b.HasIndex("Item_Id");
 
                     b.ToTable("OrderItem");
                 });
@@ -428,11 +428,11 @@ namespace NewWarehouse.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("CarrierCode")
+                    b.Property<string>("Carrier_Code")
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("CarrierDescription")
+                    b.Property<string>("Carrier_Description")
                         .IsRequired()
                         .HasColumnType("text");
 
@@ -444,47 +444,47 @@ namespace NewWarehouse.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("OrderDate")
+                    b.Property<string>("Order_Date")
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<int>("OrderId")
+                    b.Property<int>("Order_Id")
                         .HasColumnType("integer");
 
-                    b.Property<string>("PaymentType")
+                    b.Property<string>("Payment_Type")
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("Requestdate")
+                    b.Property<string>("Request_date")
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("ServiceCode")
+                    b.Property<string>("Service_Code")
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("ShipmentDate")
+                    b.Property<string>("Shipment_Date")
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("ShipmentStatus")
+                    b.Property<string>("Shipment_Status")
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("ShipmentType")
+                    b.Property<string>("Shipment_Type")
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<int>("SourceId")
+                    b.Property<int>("Source_Id")
                         .HasColumnType("integer");
 
-                    b.Property<int>("TotalPackageCount")
+                    b.Property<int>("Total_Package_Count")
                         .HasColumnType("integer");
 
-                    b.Property<double>("TotalPackageWeight")
+                    b.Property<double>("Total_Package_Weight")
                         .HasColumnType("double precision");
 
-                    b.Property<string>("TransferMode")
+                    b.Property<string>("Transfer_Mode")
                         .IsRequired()
                         .HasColumnType("text");
 
@@ -499,18 +499,18 @@ namespace NewWarehouse.Migrations
 
             modelBuilder.Entity("Models.ShipmentItem", b =>
                 {
-                    b.Property<int>("ShipmentId")
+                    b.Property<int>("Shipment_Id")
                         .HasColumnType("integer");
 
-                    b.Property<string>("ItemId")
+                    b.Property<string>("Item_Id")
                         .HasColumnType("text");
 
                     b.Property<int>("Quantity")
                         .HasColumnType("integer");
 
-                    b.HasKey("ShipmentId", "ItemId");
+                    b.HasKey("Shipment_Id", "Item_Id");
 
-                    b.HasIndex("ItemId");
+                    b.HasIndex("Item_Id");
 
                     b.ToTable("ShipmentItems");
                 });
@@ -527,8 +527,7 @@ namespace NewWarehouse.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("AddressExtra")
-                        .IsRequired()
+                    b.Property<string>("Address_Extra")
                         .HasColumnType("text");
 
                     b.Property<string>("City")
@@ -539,11 +538,7 @@ namespace NewWarehouse.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("ContactName")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("ContactPhone")
+                    b.Property<string>("Contact_Name")
                         .IsRequired()
                         .HasColumnType("text");
 
@@ -556,6 +551,10 @@ namespace NewWarehouse.Migrations
                         .HasColumnType("text");
 
                     b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Phonenumber")
                         .IsRequired()
                         .HasColumnType("text");
 
@@ -596,15 +595,15 @@ namespace NewWarehouse.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("TransferFrom")
+                    b.Property<string>("Transfer_From")
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("TransferStatus")
+                    b.Property<string>("Transfer_Status")
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("TransferTo")
+                    b.Property<string>("Transfer_To")
                         .IsRequired()
                         .HasColumnType("text");
 
@@ -619,18 +618,18 @@ namespace NewWarehouse.Migrations
 
             modelBuilder.Entity("Models.TransferItem", b =>
                 {
-                    b.Property<int>("TransferId")
+                    b.Property<int>("Transfer_Id")
                         .HasColumnType("integer");
 
-                    b.Property<string>("ItemId")
+                    b.Property<string>("Item_Id")
                         .HasColumnType("text");
 
                     b.Property<int>("Quantity")
                         .HasColumnType("integer");
 
-                    b.HasKey("TransferId", "ItemId");
+                    b.HasKey("Transfer_Id", "Item_Id");
 
-                    b.HasIndex("ItemId");
+                    b.HasIndex("Item_Id");
 
                     b.ToTable("TransferItems");
                 });
@@ -707,13 +706,13 @@ namespace NewWarehouse.Migrations
                 {
                     b.HasOne("Models.Item", "Item")
                         .WithMany("OrderItems")
-                        .HasForeignKey("ItemId")
+                        .HasForeignKey("Item_Id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("Models.Order", "Order")
                         .WithMany("OrderItems")
-                        .HasForeignKey("OrderId")
+                        .HasForeignKey("Order_Id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -726,13 +725,13 @@ namespace NewWarehouse.Migrations
                 {
                     b.HasOne("Models.Item", "Item")
                         .WithMany("ShipmentItems")
-                        .HasForeignKey("ItemId")
+                        .HasForeignKey("Item_Id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("Models.Shipment", "Shipment")
                         .WithMany("ShipmentItems")
-                        .HasForeignKey("ShipmentId")
+                        .HasForeignKey("Shipment_Id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -745,13 +744,13 @@ namespace NewWarehouse.Migrations
                 {
                     b.HasOne("Models.Item", "Item")
                         .WithMany("TransferItems")
-                        .HasForeignKey("ItemId")
+                        .HasForeignKey("Item_Id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("Models.Transfer", "Transfer")
                         .WithMany("TransferItems")
-                        .HasForeignKey("TransferId")
+                        .HasForeignKey("Transfer_Id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
