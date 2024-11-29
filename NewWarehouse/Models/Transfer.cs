@@ -9,8 +9,8 @@ namespace Models
     {
         public int Id{ get; set; }
         public string Reference{ get; set; }
-        public string Transfer_From{ get; set; }
-        public string Transfer_To{ get; set; }
+        public int Transfer_From{ get; set; }
+        public int Transfer_To{ get; set; }
         public string Transfer_Status{ get; set; }
         public string Created_at{ get; set; }
         public string Updated_at{ get; set; }
@@ -18,7 +18,7 @@ namespace Models
 
         public Transfer(){}
 
-        public Transfer(int id, string reference, string transfer_From, string transfer_To, string transfer_Status, string created_at, string updated_at, ICollection<TransferItem> transferItems){
+        public Transfer(int id, string reference, int transfer_From, int transfer_To, string transfer_Status, string created_at, string updated_at, ICollection<TransferItem> transferItems){
             Id = id;
             Reference = reference;
             Transfer_From = transfer_From;
@@ -28,5 +28,23 @@ namespace Models
             Updated_at = updated_at;
             TransferItems = transferItems;
         }
+    }
+
+    public class TransferDTO
+    {
+        public int Id { get; set; }
+        public string Reference { get; set; }
+        public int Transfer_From { get; set; }
+        public int Transfer_To { get; set; }
+        public string Transfer_Status { get; set; }
+        public string Created_at { get; set; }
+        public string Updated_at { get; set; }
+        public List<TransferItemDTO> Items { get; set; }
+    }
+
+    public class TransferItemDTO
+    {
+        public string Item_Id { get; set; }
+        public int Amount { get; set; }
     }
 }
