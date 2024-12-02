@@ -18,8 +18,9 @@ namespace Models{
         public string Created_at{ get; set; }
         public string Updated_at{ get; set; }
 
+        #pragma warning disable CS8618
         public Inventory(){}
-
+        #pragma warning restore CS8618
         public Inventory(int id, int item_id, string description, string item_reference, string location_id, int totalOnHand, int totalExpected, int totalOrdered, int totalAllocated, int totalAvailable, string created_at, string updated_at){
             Id = id;
             Item_id = item_id;

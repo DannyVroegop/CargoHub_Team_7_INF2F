@@ -1,5 +1,6 @@
 namespace Models
 {
+    #pragma warning disable CS8618
     public class ShipmentItem
     {
         public int ShipmentId { get; set; }
@@ -10,4 +11,5 @@ namespace Models
 
         public int Quantity { get; set; }
     }
+    #pragma warning restore CS8618
 }

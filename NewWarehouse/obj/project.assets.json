@@ -2149,19 +2149,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\danny\\.nuget\\packages\\": {}
+    "C:\\Users\\Dannyzard\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\danny\\OneDrive\\Documents\\Informatica\\Jaar 2\\Jaar 2 Semester 1\\SoftwareConstruction\\CargoHub_Team_7_INF2F\\NewWarehouse\\NewWarehouse.csproj",
+      "projectUniqueName": "D:\\onedrive\\Documents\\Informatica\\Jaar 2\\Semester 1\\CargoHub_Team_7_INF2F\\NewWarehouse\\NewWarehouse.csproj",
       "projectName": "NewWarehouse",
-      "projectPath": "C:\\Users\\danny\\OneDrive\\Documents\\Informatica\\Jaar 2\\Jaar 2 Semester 1\\SoftwareConstruction\\CargoHub_Team_7_INF2F\\NewWarehouse\\NewWarehouse.csproj",
-      "packagesPath": "C:\\Users\\danny\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\danny\\OneDrive\\Documents\\Informatica\\Jaar 2\\Jaar 2 Semester 1\\SoftwareConstruction\\CargoHub_Team_7_INF2F\\NewWarehouse\\obj\\",
+      "projectPath": "D:\\onedrive\\Documents\\Informatica\\Jaar 2\\Semester 1\\CargoHub_Team_7_INF2F\\NewWarehouse\\NewWarehouse.csproj",
+      "packagesPath": "C:\\Users\\Dannyzard\\.nuget\\packages\\",
+      "outputPath": "D:\\onedrive\\Documents\\Informatica\\Jaar 2\\Semester 1\\CargoHub_Team_7_INF2F\\NewWarehouse\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\danny\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Dannyzard\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2232,7 +2232,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.205/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

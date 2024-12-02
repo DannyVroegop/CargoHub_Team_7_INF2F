@@ -25,9 +25,9 @@ namespace Models{
         public string Created_at{ get; set; }
         public string Updated_at{ get; set; }
         public ICollection<ShipmentItem> ShipmentItems { get; set; }
-
+        #pragma warning disable CS8618
         public Shipment(){}
-
+        #pragma warning restore CS8618
         public Shipment(int id,int orderId, int sourceId, string orderDate, string requestdate , string shipmentDate, string shipmentType, string shipmentStatus, string notes, string carrierCode, string carrierDescription, string serviceCode, string paymentType, string transferMode, int totalPackageCount, double totalPackageWeight, string created_at, string updated_at, ICollection<ShipmentItem> shipmentItems){
             Id = id;
             OrderId = orderId;

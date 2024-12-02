@@ -15,9 +15,9 @@ namespace Models
         public string Created_at{ get; set; }
         public string Updated_at{ get; set; }
         public ICollection<TransferItem> TransferItems { get; set; }
-
+        #pragma warning disable CS8618
         public Transfer(){}
-
+        #pragma warning restore CS8618
         public Transfer(int id, string reference, string transferFrom, string transferTo, string transferStatus, string created_at, string updated_at, ICollection<TransferItem> transferItems){
             Id = id;
             Reference = reference;

@@ -9,10 +9,10 @@ namespace WarehouseCase.Controllers
     [ApiController]
     public class WarehousesController : ControllerBase
     {
-        private readonly WarehouseContext _context;
+        private readonly CargoContext _context;
 
         // Constructor to inject the DbContext
-        public WarehousesController(WarehouseContext context)
+        public WarehousesController(CargoContext context)
         {
             _context = context;
         }

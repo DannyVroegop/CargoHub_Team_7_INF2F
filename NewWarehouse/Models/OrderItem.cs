@@ -2,6 +2,7 @@ using System;
 
 namespace Models
 {
+    #pragma warning disable CS8618
     public class OrderItem
     {
         public int OrderId { get; set; }
@@ -12,4 +13,5 @@ namespace Models
 
         public int Quantity { get; set; }
     }
+    #pragma warning restore CS8618
 }

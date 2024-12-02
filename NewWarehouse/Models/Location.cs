@@ -13,8 +13,10 @@ namespace Models{
         public string Created_at{ get; set; }
         public string Updated_at{ get; set; }
 
+        #pragma warning disable CS8618
         public Location(){}
 
+        #pragma warning restore CS8618
         public Location(int id, int warehouseId, string code, string name, string created_at, string updated_at){
             Id = id;
             WarehouseId = warehouseId;

@@ -3,9 +3,9 @@ using Models;
 
 namespace Data
 {
-    public class WarehouseContext : DbContext
+    public class CargoContext : DbContext
     {
-        public WarehouseContext(DbContextOptions<WarehouseContext> options) : base(options) { }
+        public CargoContext(DbContextOptions<CargoContext> options) : base(options) { }
 
         public DbSet<Client> Clients { get; set; }
         public DbSet<Inventory> Inventories { get; set; }

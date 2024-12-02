@@ -1,21 +1,14 @@
 {
-  "Logging": {
-    "LogLevel": {
-      "Default": "Information",
-      "Microsoft.AspNetCore": "Warning"
-    }
-  },
-  "API_KEY":"a1b2c3d4e5",
-  "ApiOptions":{
-    "User1": {
+    "a1b2c3d4e5": {
     "APIToken": "a1b2c3d4e5",
-    "appUser1": "CargoHUB Dashboard 1",
-    "endpoint_accessUser1": {
+    "ppUser1": "CargoHUB Dashboard 1",
+    "endpoint_accessUser": {
             "full": true
-    }},
-    "User2": {"APIToken": "f6g7h8i9j0",
-      "app": "CargoHUB Dashboard 2",
-      "endpoint_accessUser2": {
+    }
+    },
+    "f6g7h8i9j0":{
+    "app": "CargoHUB Dashboard 2",
+      "endpoint_accessUser": {
           "full": false,
           "warehouses": {
               "full": false,
@@ -82,7 +75,7 @@
           },
           "clients":  {
               "full": false,
-              "get": true,
+              "get": false,
               "post": false,
               "put": false,
               "delete": false
@@ -94,10 +87,6 @@
               "put": false,
               "delete": false
           }
-      }}
-  },
-  "AllowedHosts": "*",
-  "ConnectionStrings": {
-    "WarehousingContext": "Host=localhost;Port=5432;Database=Warehousing;Username=postgres"
-  }
+      }
+    }
 }

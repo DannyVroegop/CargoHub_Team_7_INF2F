@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "w0vcFKNNeXMi5rJ2NnBJBOwc4Vx3n/2mQ3P3vk7xodE=",
+  "Hash": "oBGJR+61H1L1jNGpoD+kS0ZkspwPZ5YcWtqO1BKCPxc=",
   "Source": "NewWarehouse",
   "BasePath": "_content/NewWarehouse",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "NewWarehouse\\wwwroot",
       "Source": "NewWarehouse",
-      "ContentRoot": "C:\\Users\\danny\\OneDrive\\Documents\\Informatica\\Jaar 2\\Jaar 2 Semester 1\\SoftwareConstruction\\CargoHub_Team_7_INF2F\\NewWarehouse\\wwwroot\\",
+      "ContentRoot": "D:\\onedrive\\Documents\\Informatica\\Jaar 2\\Semester 1\\CargoHub_Team_7_INF2F\\NewWarehouse\\wwwroot\\",
       "BasePath": "_content/NewWarehouse",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\danny\\OneDrive\\Documents\\Informatica\\Jaar 2\\Jaar 2 Semester 1\\SoftwareConstruction\\CargoHub_Team_7_INF2F\\NewWarehouse\\obj\\Debug\\net8.0\\scopedcss\\bundle\\NewWarehouse.styles.css",
+      "Identity": "D:\\onedrive\\Documents\\Informatica\\Jaar 2\\Semester 1\\CargoHub_Team_7_INF2F\\NewWarehouse\\obj\\Debug\\net8.0\\scopedcss\\bundle\\NewWarehouse.styles.css",
       "SourceId": "NewWarehouse",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\danny\\OneDrive\\Documents\\Informatica\\Jaar 2\\Jaar 2 Semester 1\\SoftwareConstruction\\CargoHub_Team_7_INF2F\\NewWarehouse\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
+      "ContentRoot": "D:\\onedrive\\Documents\\Informatica\\Jaar 2\\Semester 1\\CargoHub_Team_7_INF2F\\NewWarehouse\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
       "BasePath": "_content/NewWarehouse",
       "RelativePath": "NewWarehouse.styles.css",
       "AssetKind": "All",
@@ -33,13 +33,13 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\danny\\OneDrive\\Documents\\Informatica\\Jaar 2\\Jaar 2 Semester 1\\SoftwareConstruction\\CargoHub_Team_7_INF2F\\NewWarehouse\\obj\\Debug\\net8.0\\scopedcss\\bundle\\NewWarehouse.styles.css"
+      "OriginalItemSpec": "D:\\onedrive\\Documents\\Informatica\\Jaar 2\\Semester 1\\CargoHub_Team_7_INF2F\\NewWarehouse\\obj\\Debug\\net8.0\\scopedcss\\bundle\\NewWarehouse.styles.css"
     },
     {
-      "Identity": "C:\\Users\\danny\\OneDrive\\Documents\\Informatica\\Jaar 2\\Jaar 2 Semester 1\\SoftwareConstruction\\CargoHub_Team_7_INF2F\\NewWarehouse\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\NewWarehouse.bundle.scp.css",
+      "Identity": "D:\\onedrive\\Documents\\Informatica\\Jaar 2\\Semester 1\\CargoHub_Team_7_INF2F\\NewWarehouse\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\NewWarehouse.bundle.scp.css",
       "SourceId": "NewWarehouse",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\danny\\OneDrive\\Documents\\Informatica\\Jaar 2\\Jaar 2 Semester 1\\SoftwareConstruction\\CargoHub_Team_7_INF2F\\NewWarehouse\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\",
+      "ContentRoot": "D:\\onedrive\\Documents\\Informatica\\Jaar 2\\Semester 1\\CargoHub_Team_7_INF2F\\NewWarehouse\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\",
       "BasePath": "_content/NewWarehouse",
       "RelativePath": "NewWarehouse.bundle.scp.css",
       "AssetKind": "All",
@@ -52,13 +52,13 @@
       "AssetTraitValue": "ProjectBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\danny\\OneDrive\\Documents\\Informatica\\Jaar 2\\Jaar 2 Semester 1\\SoftwareConstruction\\CargoHub_Team_7_INF2F\\NewWarehouse\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\NewWarehouse.bundle.scp.css"
+      "OriginalItemSpec": "D:\\onedrive\\Documents\\Informatica\\Jaar 2\\Semester 1\\CargoHub_Team_7_INF2F\\NewWarehouse\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\NewWarehouse.bundle.scp.css"
     },
     {
-      "Identity": "C:\\Users\\danny\\OneDrive\\Documents\\Informatica\\Jaar 2\\Jaar 2 Semester 1\\SoftwareConstruction\\CargoHub_Team_7_INF2F\\NewWarehouse\\wwwroot\\css\\site.css",
+      "Identity": "D:\\onedrive\\Documents\\Informatica\\Jaar 2\\Semester 1\\CargoHub_Team_7_INF2F\\NewWarehouse\\wwwroot\\css\\site.css",
       "SourceId": "NewWarehouse",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\danny\\OneDrive\\Documents\\Informatica\\Jaar 2\\Jaar 2 Semester 1\\SoftwareConstruction\\CargoHub_Team_7_INF2F\\NewWarehouse\\wwwroot\\",
+      "ContentRoot": "D:\\onedrive\\Documents\\Informatica\\Jaar 2\\Semester 1\\CargoHub_Team_7_INF2F\\NewWarehouse\\wwwroot\\",
       "BasePath": "_content/NewWarehouse",
       "RelativePath": "css/site.css",
       "AssetKind": "All",
@@ -74,10 +74,10 @@
       "OriginalItemSpec": "wwwroot\\css\\site.css"
     },
     {
-      "Identity": "C:\\Users\\danny\\OneDrive\\Documents\\Informatica\\Jaar 2\\Jaar 2 Semester 1\\SoftwareConstruction\\CargoHub_Team_7_INF2F\\NewWarehouse\\wwwroot\\favicon.ico",
+      "Identity": "D:\\onedrive\\Documents\\Informatica\\Jaar 2\\Semester 1\\CargoHub_Team_7_INF2F\\NewWarehouse\\wwwroot\\favicon.ico",
       "SourceId": "NewWarehouse",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\danny\\OneDrive\\Documents\\Informatica\\Jaar 2\\Jaar 2 Semester 1\\SoftwareConstruction\\CargoHub_Team_7_INF2F\\NewWarehouse\\wwwroot\\",
+      "ContentRoot": "D:\\onedrive\\Documents\\Informatica\\Jaar 2\\Semester 1\\CargoHub_Team_7_INF2F\\NewWarehouse\\wwwroot\\",
       "BasePath": "_content/NewWarehouse",
       "RelativePath": "favicon.ico",
       "AssetKind": "All",
@@ -93,10 +93,10 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
-      "Identity": "C:\\Users\\danny\\OneDrive\\Documents\\Informatica\\Jaar 2\\Jaar 2 Semester 1\\SoftwareConstruction\\CargoHub_Team_7_INF2F\\NewWarehouse\\wwwroot\\js\\site.js",
+      "Identity": "D:\\onedrive\\Documents\\Informatica\\Jaar 2\\Semester 1\\CargoHub_Team_7_INF2F\\NewWarehouse\\wwwroot\\js\\site.js",
       "SourceId": "NewWarehouse",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\danny\\OneDrive\\Documents\\Informatica\\Jaar 2\\Jaar 2 Semester 1\\SoftwareConstruction\\CargoHub_Team_7_INF2F\\NewWarehouse\\wwwroot\\",
+      "ContentRoot": "D:\\onedrive\\Documents\\Informatica\\Jaar 2\\Semester 1\\CargoHub_Team_7_INF2F\\NewWarehouse\\wwwroot\\",
       "BasePath": "_content/NewWarehouse",
       "RelativePath": "js/site.js",
       "AssetKind": "All",

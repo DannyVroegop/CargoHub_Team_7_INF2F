@@ -12,7 +12,9 @@ namespace Models{
         public string Created_at{ get; set; }
         public string Updated_at{ get; set; }
 
+        #pragma warning disable CS8618
         public ItemLine(){}
+        #pragma warning restore CS8618
 
         public ItemLine(int id, string name, string description, string created_at, string updated_at){
             Id = id;

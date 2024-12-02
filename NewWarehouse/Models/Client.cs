@@ -19,9 +19,9 @@ namespace Models
         public string Contact_Email{ get; set; }
         public string Created_at{ get; set; }
         public string Updated_at{ get; set; }
-
+        #pragma warning disable CS8618
         public Client(){}
-
+        #pragma warning restore CS8618
         public Client(int id, string name, string address, string city, string zip_code, string province, string country, string contact_name, string contact_phone, string contact_email, string created_at, string updated_at){
             Id = id;
             Name = name;
