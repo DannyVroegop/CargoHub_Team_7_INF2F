@@ -163,3 +163,4 @@ cython_debug/
 
 Testing/bin/
 NewWarehouse/appsettings.Development.json
+NewWarehouse/ApiKeyInfo.json

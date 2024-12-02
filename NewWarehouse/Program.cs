@@ -4,6 +4,10 @@ using Data;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.Extensions.Options;
+using System;
+using System.IO;
+using System.Text.Json;
+using System.Text.Json.Nodes;
 
 var builder = WebApplication.CreateBuilder(args);
 bool LoadData = false;
@@ -46,18 +50,62 @@ app.MapControllerRoute(
 
 app.Use(async (context, next) =>{
             var ApiTokens = builder.Configuration["API_KEY"];
-            Console.WriteLine(builder.Configuration);
+            var HTTPMethod = context.Request.Method;
+            var URL = context.Request.Path;
+
+            string location = URL.ToString().Split('/')[3];
+
+            string json = File.ReadAllText("ApiKeyInfo.json");
+            
+            
             if (!context.Request.Headers.ContainsKey("API_KEY"))
             {
                 context.Response.StatusCode = 401;
                 return;
-        }
-            if (ApiTokens != context.Request.Headers["API_KEY"])
+            }
+
+            if (!IsAccessAllowed(json, context.Request.Headers["API_KEY"], location, HTTPMethod))
             {
                 context.Response.StatusCode = 401;
                 return;
             }
+
+            Console.WriteLine("API key accepted");
             await next();
         });
+
+static bool IsAccessAllowed(string json, string apiKey, string path, string HTTPMethod)
+{
+    var root = JsonNode.Parse(json);
+    var ApiAccess = root?[apiKey]?["endpoint_accessUser"];
+
+    if (ApiAccess == null)
+    {
+        Console.WriteLine("Invalid API Key or configuration");
+        return false;
+    }
+
+    if(ApiAccess["full"]?.GetValue<bool>() == true)
+    {
+        //full access
+        return true;
+    }
+
+    var permissionTable = ApiAccess as JsonObject;
+    if (permissionTable != null && permissionTable.ContainsKey(path))
+    {
+        var pathPermissions = permissionTable[path] as JsonObject;
+        if (pathPermissions != null)
+        {
+            if (pathPermissions["full"]?.GetValue<bool>() == true)
+            {
+                return true;
+            }
+            return pathPermissions[HTTPMethod.ToString().ToLower()]?.GetValue<bool>() == true;
+        }
+        return false;
+    }
+    return false;
+}
 
 app.Run();
