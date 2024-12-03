@@ -1,4 +1,4 @@
-using Models; // Namespace for the Transfer model
+using Models; // Namespace for the Item model
 
 namespace Services
 {

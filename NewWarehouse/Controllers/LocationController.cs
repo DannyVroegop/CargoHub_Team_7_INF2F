@@ -56,16 +56,12 @@ namespace Controllers
                 return BadRequest("Location ID mismatch.");
             }
 
-            // Map DTO to Model
-
             var updatedLocation = await _locationService.UpdateLocationAsync(id, location);
 
             if (updatedLocation == null)
             {
                 return NotFound();
             }
-
-            // Map Model back to DTO for the response
             return Ok(updatedLocation);
         }
 
