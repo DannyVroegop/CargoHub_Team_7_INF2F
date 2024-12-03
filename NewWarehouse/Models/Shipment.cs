@@ -24,11 +24,11 @@ namespace Models{
         public double Total_Package_Weight{ get; set; }
         public string Created_at{ get; set; }
         public string Updated_at{ get; set; }
-        public ICollection<ShipmentItem> ShipmentItems { get; set; }
+        public ICollection<ShipmentItem> Items { get; set; }
 
         public Shipment(){}
 
-        public Shipment(int id,int order_Id, int source_Id, string order_Date, string request_date , string shipment_Date, string shipment_Type, string shipment_Status, string notes, string carrier_Code, string carrier_Description, string service_Code, string payment_Type, string transfer_Mode, int total_Package_Count, double total_Package_Weight, string created_at, string updated_at, ICollection<ShipmentItem> shipmentItems){
+        public Shipment(int id,int order_Id, int source_Id, string order_Date, string request_date , string shipment_Date, string shipment_Type, string shipment_Status, string notes, string carrier_Code, string carrier_Description, string service_Code, string payment_Type, string transfer_Mode, int total_Package_Count, double total_Package_Weight, string created_at, string updated_at, ICollection<ShipmentItem> items){
             Id = id;
             Order_Id = order_Id;
             Source_Id = source_Id;
@@ -47,7 +47,7 @@ namespace Models{
             Total_Package_Weight = total_Package_Weight;
             Created_at = created_at;
             Updated_at = updated_at;
-            ShipmentItems = shipmentItems;
+            Items = items;
         }
     }
 
@@ -73,12 +73,8 @@ namespace Models{
         public string Updated_at { get; set; }
         
         // List of ShipmentItemDTO to represent items in the shipment
-        public List<ShipmentItemDTO> ShipmentItems { get; set; }
+        public List<ShipmentItemDTO> Items { get; set; }
         
-        public ShipmentDTO()
-        {
-            ShipmentItems = new List<ShipmentItemDTO>();
-        }
     }
 
     public class ShipmentItemDTO

@@ -36,7 +36,7 @@ namespace Data
 
             modelBuilder.Entity<OrderItem>()
                 .HasOne(oi => oi.Order)
-                .WithMany(o => o.OrderItems)
+                .WithMany(o => o.Items)
                 .HasForeignKey(oi => oi.Order_Id); // Foreign key to Order.
 
             modelBuilder.Entity<OrderItem>()
@@ -66,7 +66,7 @@ namespace Data
 
             modelBuilder.Entity<ShipmentItem>()
                 .HasOne(si => si.Shipment)
-                .WithMany(s => s.ShipmentItems)
+                .WithMany(s => s.Items)
                 .HasForeignKey(si => si.Shipment_Id); // Foreign key to Shipment.
 
             modelBuilder.Entity<ShipmentItem>()

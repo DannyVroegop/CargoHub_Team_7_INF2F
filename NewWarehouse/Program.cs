@@ -21,7 +21,7 @@ builder.Services.AddScoped<IItemGroupService, ItemGroupService>();
 builder.Services.AddScoped<IItemTypeService, ItemTypeService>();
 builder.Services.AddScoped<IInventoryService, InventoryService>();
 builder.Services.AddScoped<ISupplierService, SupplierService>();
-// builder.Services.AddScoped<IOrderService, OrderService>();
+builder.Services.AddScoped<IOrderService, OrderService>();
 builder.Services.AddScoped<IClientService, ClientService>();
 builder.Services.AddScoped<IShipmentService, ShipmentService>();
 

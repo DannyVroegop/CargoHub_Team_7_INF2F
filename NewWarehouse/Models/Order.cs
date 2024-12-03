@@ -25,11 +25,11 @@ namespace Models{
         public double Total_Surcharge{ get; set; }
         public string Created_at{ get; set; }
         public string Updated_at{ get; set; }
-        public ICollection<OrderItem> OrderItems { get; set; }
+        public ICollection<OrderItem> Items { get; set; }
 
         public Order(){}
 
-        public Order(int id, int source_Id, string order_Date, string request_date , string reference, string order_Status, string notes, string shipping_Notes, string picking_notes, int warehouse_Id, int ship_To, int bill_To, int shipment_Id, double total_Ammount, double total_Discount, double total_Tax, double total_Surcharge, string created_at, string updated_at, ICollection<OrderItem> orderItems, string reference_Extra = "empty"){
+        public Order(int id, int source_Id, string order_Date, string request_date , string reference, string order_Status, string notes, string shipping_Notes, string picking_notes, int warehouse_Id, int ship_To, int bill_To, int shipment_Id, double total_Ammount, double total_Discount, double total_Tax, double total_Surcharge, string created_at, string updated_at, ICollection<OrderItem> items, string reference_Extra = "empty"){
             Id = id;
             Source_Id = source_Id;
             Order_Date = order_Date;
@@ -50,7 +50,7 @@ namespace Models{
             Total_Surcharge = total_Surcharge;
             Created_at = created_at;
             Updated_at = updated_at;
-            OrderItems = orderItems;
+            Items = items;
         }
     }
     public class OrderDTO
@@ -77,21 +77,12 @@ namespace Models{
         public string Updated_at { get; set; }
 
         // List of OrderItemDTO to represent items in the order
-        public List<OrderItemDTO> OrderItems { get; set; }
-
-        public OrderDTO()
-        {
-            OrderItems = new List<OrderItemDTO>();
-        }
+        public List<OrderItemDTO> Items { get; set; }
     }
 
     public class OrderItemDTO
     {
         public string Item_Id { get; set; } // The ID of the item in the order
-        public int Quantity { get; set; } // Quantity of the item
-        public double Unit_Price { get; set; } // Unit price of the item
-        public double Discount { get; set; } // Discount applied to the item
-        public double Tax { get; set; } // Tax applied to the item
-        public double Surcharge { get; set; } // Surcharge applied to the item
+        public int Amount { get; set; } // Quantity of the item
     }
 }

@@ -126,7 +126,7 @@ namespace Controllers
                 Total_Package_Weight = shipment.Total_Package_Weight,
                 Created_at = shipment.Created_at,
                 Updated_at = shipment.Updated_at,
-                ShipmentItems = shipment.ShipmentItems?.Select(item => new ShipmentItemDTO
+                Items = shipment.Items?.Select(item => new ShipmentItemDTO
                 {
                     Item_Id = item.Item_Uid,
                     Amount = item.Quantity
@@ -157,7 +157,7 @@ namespace Controllers
                 Total_Package_Weight = shipmentDto.Total_Package_Weight,
                 Created_at = shipmentDto.Created_at,
                 Updated_at = shipmentDto.Updated_at,
-                ShipmentItems = shipmentDto.ShipmentItems?.Select(itemDto => new ShipmentItem
+                Items = shipmentDto.Items?.Select(itemDto => new ShipmentItem
                 {
                     Item_Uid = itemDto.Item_Id,
                     Quantity = itemDto.Amount

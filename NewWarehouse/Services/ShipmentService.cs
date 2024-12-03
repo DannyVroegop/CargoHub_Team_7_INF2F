@@ -16,13 +16,13 @@ namespace Services
         public async Task<IEnumerable<Shipment>> GetAllShipmentsAsync()
         {
             return await _context.Shipments
-                .Include(t => t.ShipmentItems) // Ensure related items are included
+                .Include(t => t.Items) // Ensure related items are included
                 .ToListAsync();
         }
         public async Task<Shipment> GetShipmentByIdAsync(int id)
         {
             return await _context.Shipments
-                .Include(t => t.ShipmentItems) // Include related ShipmentItems
+                .Include(t => t.Items) // Include related ShipmentItems
                 .FirstOrDefaultAsync(t => t.Id == id); // Retrieve Shipment by ID
         }
 
@@ -36,7 +36,7 @@ namespace Services
         public async Task<Shipment?> UpdateShipmentAsync(int id, Shipment updatedShipment)
         {
             var existingShipment = await _context.Shipments
-                .Include(t => t.ShipmentItems) // Include ShipmentItems for updating
+                .Include(t => t.Items) // Include ShipmentItems for updating
                 .FirstOrDefaultAsync(t => t.Id == id);
 
             if (existingShipment == null)
@@ -64,10 +64,10 @@ namespace Services
             existingShipment.Updated_at = updatedShipment.Updated_at;
 
             // Handle ShipmentItems
-            foreach (var updatedItem in updatedShipment.ShipmentItems)
+            foreach (var updatedItem in updatedShipment.Items)
             {
                 // Check if the item already exists in the Shipment
-                var existingItem = existingShipment.ShipmentItems
+                var existingItem = existingShipment.Items
                     .FirstOrDefault(item => item.Item_Uid == updatedItem.Item_Uid);
 
                 if (existingItem != null)
@@ -78,16 +78,16 @@ namespace Services
                 else
                 {
                     // If item does not exist, add it to the Shipment
-                    existingShipment.ShipmentItems.Add(updatedItem);
+                    existingShipment.Items.Add(updatedItem);
                 }
             }
-            var itemsToRemove = existingShipment.ShipmentItems
-                .Where(item => !updatedShipment.ShipmentItems.Any(updatedItem => updatedItem.Item_Uid == item.Item_Uid))
+            var itemsToRemove = existingShipment.Items
+                .Where(item => !updatedShipment.Items.Any(updatedItem => updatedItem.Item_Uid == item.Item_Uid))
                 .ToList();
 
             foreach (var itemToRemove in itemsToRemove)
             {
-                existingShipment.ShipmentItems.Remove(itemToRemove);
+                existingShipment.Items.Remove(itemToRemove);
             }
             // Save changes to the database
             await _context.SaveChangesAsync();
