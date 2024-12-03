@@ -50,4 +50,40 @@ namespace Models{
             ShipmentItems = shipmentItems;
         }
     }
+
+    public class ShipmentDTO
+    {
+        public int Id { get; set; } // Optional for input, but useful for mapping back to the full object
+        public int Order_Id { get; set; }
+        public int Source_Id { get; set; }
+        public string Order_Date { get; set; }
+        public string Request_date { get; set; }
+        public string Shipment_Date { get; set; }
+        public string Shipment_Type { get; set; }
+        public string Shipment_Status { get; set; }
+        public string Notes { get; set; }
+        public string Carrier_Code { get; set; }
+        public string Carrier_Description { get; set; }
+        public string Service_Code { get; set; }
+        public string Payment_Type { get; set; }
+        public string Transfer_Mode { get; set; }
+        public int Total_Package_Count { get; set; }
+        public double Total_Package_Weight { get; set; }
+        public string Created_at { get; set; }
+        public string Updated_at { get; set; }
+        
+        // List of ShipmentItemDTO to represent items in the shipment
+        public List<ShipmentItemDTO> ShipmentItems { get; set; }
+        
+        public ShipmentDTO()
+        {
+            ShipmentItems = new List<ShipmentItemDTO>();
+        }
+    }
+
+    public class ShipmentItemDTO
+    {
+        public string Item_Id { get; set; } // The ID of the item in the shipment
+        public int Amount { get; set; } // The quantity or amount of the item in the shipment
+    }
 }

@@ -23,7 +23,7 @@ builder.Services.AddScoped<IInventoryService, InventoryService>();
 builder.Services.AddScoped<ISupplierService, SupplierService>();
 // builder.Services.AddScoped<IOrderService, OrderService>();
 builder.Services.AddScoped<IClientService, ClientService>();
-// builder.Services.AddScoped<IShipmentService, ShipmentService>();
+builder.Services.AddScoped<IShipmentService, ShipmentService>();
 
 // Configure the application
 builder.WebHost.UseUrls("http://127.0.0.1:3000");

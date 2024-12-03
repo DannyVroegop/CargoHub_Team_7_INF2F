@@ -53,4 +53,45 @@ namespace Models{
             OrderItems = orderItems;
         }
     }
+    public class OrderDTO
+    {
+        public int Id { get; set; } // Optional for input, useful for mapping
+        public int Source_Id { get; set; }
+        public string Order_Date { get; set; }
+        public string Request_date { get; set; }
+        public string Reference { get; set; }
+        public string Reference_Extra { get; set; } = "empty";
+        public string Order_Status { get; set; }
+        public string Notes { get; set; }
+        public string Shipping_Notes { get; set; }
+        public string Picking_Notes { get; set; }
+        public int Warehouse_Id { get; set; }
+        public int Ship_To { get; set; }
+        public int Bill_To { get; set; }
+        public int Shipment_Id { get; set; }
+        public double Total_Ammount { get; set; }
+        public double Total_Discount { get; set; }
+        public double Total_Tax { get; set; }
+        public double Total_Surcharge { get; set; }
+        public string Created_at { get; set; }
+        public string Updated_at { get; set; }
+
+        // List of OrderItemDTO to represent items in the order
+        public List<OrderItemDTO> OrderItems { get; set; }
+
+        public OrderDTO()
+        {
+            OrderItems = new List<OrderItemDTO>();
+        }
+    }
+
+    public class OrderItemDTO
+    {
+        public string Item_Id { get; set; } // The ID of the item in the order
+        public int Quantity { get; set; } // Quantity of the item
+        public double Unit_Price { get; set; } // Unit price of the item
+        public double Discount { get; set; } // Discount applied to the item
+        public double Tax { get; set; } // Tax applied to the item
+        public double Surcharge { get; set; } // Surcharge applied to the item
+    }
 }
