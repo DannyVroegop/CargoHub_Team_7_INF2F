@@ -37,7 +37,7 @@ namespace Controllers
 
         // POST: api/v2/locations
         [HttpPost]
-        public async Task<ActionResult<Location>> PostLocatione(Location location)
+        public async Task<ActionResult<Location>> PostLocation(Location location)
         {
             if (!ModelState.IsValid)
             {
